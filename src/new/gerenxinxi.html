@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/loading.css">
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/common.js" type="text/javascript"></script>
+	<script src="js/login.js" type="text/javascript"></script>
+    <title>个人信息</title>
+</head>
+
+<body>
+    <div class="yunying1 ">
+        <div class="progressbar">
+            <div><span class="progress2"></span>
+                <ul class="circle clearfix">
+                    <li class="active"><span></span></li>
+                    <li class=""><span></span></li>
+                    <li class=""><span></span></li>
+                    <li><span></span></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="text">
+            <li><span>个人信息</span></li>
+            <li><span>工作信息</span></li>
+            <li><span>运营商信息</span></li>
+            <li><span>在线提交</span></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="m_t40 form-group">
+			<input id="hisPId" type="hidden"/>
+			<input id="phoneVal" type="hidden"/>
+            <title class="font-b font-w-b font-hei text-center">请填写您的身份信息（必填）</title>
+            <p class="text-center font-hei font-b m_t40 font-w-b">
+                <input id="realName" type="text" placeholder="真实姓名" readonly="readonly" />
+            </p>
+            <p class="text-center font-hei font-b m_t40 font-w-b">
+                <input id="idCard" type="text" placeholder="身份证号" readonly="readonly" />
+            </p>
+            <p class="text-center font-hei font-sm m_t40 clearfix ">
+                <span class="fl font-sm font-hui text-left">实名认证成功，则实名信息将与您的账号<a id="phone" href="javascript:void(0)">***********</a>进行绑定</span>
+            </p>
+        </div>
+        <div class="m_t40 form-group">
+            <title class="font-b font-w-b font-hei text-center">请填写居住地址(必填)</title>
+            <p class="text-center font-hei font-b m_t40 font-w-b">
+                <input id="cityName" type="text" placeholder="所在城市" readonly="readonly" />
+            </p>
+			<p id="location" class="text-center font-hei font-b m_t40 font-w-b clearfix" style="display:none">
+				<span class="half fl">
+				<select id="province" onchange="changeCity()">
+					<option value="">选择省份</option>
+				</select>
+				<i></i></span>
+				<span class="half fr">
+				<select id="city">
+					<option value="">选择城市</option>
+				</select>
+				<i></i></span>
+			</p>
+            <p class=" font-hei font-b m_t40 font-w-b">
+                <input id="addr" type="text" placeholder="请填写详细的地址。例：幸福路幸福小区6东601室" />
+            </p>
+            <p class="text-left font-hui font-sm m_t40">
+                地址不完整可能导致审核失败,请认真填写
+            </p>
+        </div>
+        <div class="m_t40 form-group">
+            <title class="font-b font-w-b font-hei text-center">紧急联系人(必填)</title>
+            <p class="text-center font-hei font-b m_t40 font-w-b clearfix">
+                <span class="half fl"><input id="relationName" type="text" placeholder="输入家属真实姓名"></span>
+                <span class="half fr tianjia"><input id="relationPhone" type="text" placeholder="联系手机"></span>
+            </p>
+            <p class="text-center font-hei font-b m_t40 font-w-b clearfix">
+                <span class="half fl"><input id="unrelationName" type="text" placeholder="输入朋友真实姓名"></span>
+                <span class="half fr tianjia"><input id="unrelationPhone" type="text" placeholder="联系手机"></span>
+            </p>
+            <p class="text-left font-hui font-sm m_t40">
+                非必要情况下不会联系
+            </p>
+        </div>
+        <div class="m_t40 form-group">
+            <title class="font-b font-w-b font-hei text-center">个人信息(选填)</title>
+            <p class="text-center font-hei font-b m_t40 flex">
+				<input id="haveMarry" type="hidden" value="-1"/>
+                <span>婚姻状态:</span>
+                <button id="haveMarry1" class="btn">已婚</button>
+                <button id="haveMarry0" class="btn">未婚</button>
+            </p>
+            <p class="text-center font-hei font-b m_t40 flex">
+				<input id="haveCar" type="hidden" value="-1"/>
+                <span>是否有房:</span>
+                <button id="haveCar1" class="btn">有</button>
+                <button id="haveCar0" class="btn">无</button>
+            </p>
+            <p class="text-center font-hei font-b m_t40 flex">
+				<input id="haveHouse" type="hidden" value="-1"/>
+                <span>是否有车:</span>
+                <button id="haveHouse1" class="btn">有</button>
+                <button id="haveHouse0" class="btn">无</button>
+            </p>
+            <p class="text-left font-hui font-sm m_t40">
+                信息的真实性会关乎到您的审核额度，请认真填写
+            </p>
+             <p class="text-left font-blue font-sm m_t40 must">
+                您提交的所有信息，水象分期会严格遵守个人隐私保密协议
+            </p>
+			<p class="text-center font-hei font-sm m_t40 ">
+				<span class="fl font-m font-hui"><input id="agreeCheck" type="checkbox" checked="checked" />已阅读并同意<a href="javascript:void(0)" onclick="tanchuang('https://www.beadwallet.com/app/loanh5/authorization.html')">《征信授权协议》</a></span>
+			</p>
+        </div>
+        <button type="button" class="btn font-bai m_t40 disable" disabled="disabled" id="subForm" onclick="toNext()">下一步</button>
+    </div>
+<script src="js/flex.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	// 是否结束
+	isEnd("subForm");
+	// 页面初始化
+    $(".flex button").on("click",function(){
+        $(this).siblings("button").removeClass("on");
+        $(this).removeClass("on").addClass("on");
+		// 对应值填充
+		var id = $(this).attr("id");
+		var type = id.substring(0, id.length - 1);
+		var value = id.substring(id.length - 1);
+		$("#" + type).val(value);
+    });
+	initData();
+})
+// 信息回填
+function initData() {
+	// 基本信息
+	$.post(
+		"/beadwalletloanapp/app/my/appCheckLogin/findBwBorrowerByBwId.do",
+		{
+			loginToken: getLoginToken(),
+			bwId: getUUID()
+		},
+		function(data) {
+			if (data.code == "000") {
+				var phone = data.result.phone;
+				$("#phoneVal").val(phone);
+				$("#phone").html(phone.substring(0,3) + "****" + phone.substring(phone.length - 4));
+				if (data.result.name) {
+					$("#realName").val(data.result.name);
+				} else {
+					$("#realName").attr("readonly", null);
+				}
+				if (data.result.idCard) {
+					$("#idCard").val(data.result.idCard);
+				} else {
+					$("#idCard").attr("readonly", null);
+				}
+			}
+		},
+		"json"
+	);
+	// 个人信息
+	$.post(
+		"/beadwalletloanapp/app/infoVerify/appCheckLogin/findPersonInfo.do",
+		{
+			loginToken: getLoginToken(),
+			bwId: getUUID(),
+			orderId: getParameter("orderId")
+		},
+		function(data) {
+			if (data.code == "000") {
+				$("#hisPId").val(data.result.id);
+				/*if (data.result.cityName) {
+					$("#cityName").val(data.result.cityName);
+				} else {
+					getLocation();
+				}*/
+				getLocation();
+				$("#addr").val(data.result.address);
+				$("#relationName").val(data.result.relationName);
+				$("#relationPhone").val(data.result.relationPhone);
+				$("#unrelationName").val(data.result.unrelationName);
+				$("#unrelationPhone").val(data.result.unrelationPhone);
+				var haveMarry = data.result.marryStatus;
+				var haveHouse = data.result.houseStatus;
+				var haveCar = data.result.carStatus;
+				if (haveMarry == 0 || haveMarry == 1) {
+					$("#haveMarry" + haveMarry).click();
+				}
+				if (haveHouse == 0 || haveHouse == 1) {
+					$("#haveHouse" + haveHouse).click();
+				}
+				if (haveCar == 0 || haveCar == 1) {
+					$("#haveCar" + haveCar).click();
+				}
+			} else {
+				getLocation();
+			}
+		},
+		"json"
+	);
+}
+//修改城市
+function changeCity(){
+	//获取省份的ID
+	var province = $("#province").val();
+	//发送ajax
+	$.ajax({
+		type : "post",
+		url : "/beadwalletloanapp/app/fuiou/queryCity.do",
+		dataType : "json",
+		data : {"provinceId":province},
+		success : function(data) {	
+			if(data.code=="000"){
+				var result =  data.result;
+				//清空
+				$("#city").empty();
+				$("#city").append("<option value=''>选择城市</option>");
+				var options = [];
+				if(result !=null){
+					$.each(result,function(index,item){ 
+						options.push("<option value='" + item.code + "'> " +  item.cityName + " </option>");
+					});
+					$("#city").append(options.join(''));  
+				}
+			} else {
+				alert("城市信息加载失败");
+			}
+		}
+	});
+}
+// 获取定位
+var _locationFlag = true;
+function getLocation() {
+	$.post("/beadwalletloanapp/weixin/getLocation.do", function(data) {
+		if (data.code == "000") {
+			$("#cityName").val("您当前所在城市：" + data.result);
+		} else {
+			/*if (isWeixin()) {
+				alert("定位失败");
+			} else {
+				
+			}*/
+			_locationFlag = false;
+			$("#cityName").hide();
+			$("#location").show();
+			//获取省份
+			$.ajax({
+				type : "post",
+				url : "/beadwalletloanapp/app/fuiou/queryProvince.do",
+				dataType : "json",
+				success : function(data) {	
+					if(data.code == "000"){
+						var result =  data.result;
+						//清空
+						$("#province").empty();
+						$("#province").append("<option value=''>选择省份</option>");
+						var options = [];
+						if(result !=null){
+							$.each(result, function(name, value) {
+								options.push("<option value='" + name + "'> " + value + " </option>");
+							});
+							$("#province").append(options.join(''));  
+						}
+					}
+				}
+			});
+		}
+	}, "json");
+}
+// 下一步
+function toNext() {
+	var realName = $("#realName").val();
+	var idCard = $("#idCard").val();
+	var cityName = $("#cityName").val();
+	var addr = $("#addr").val();
+	var relationName = $("#relationName").val();
+	var relationPhone = $("#relationPhone").val();
+	var unrelationName = $("#unrelationName").val();
+	var unrelationPhone = $("#unrelationPhone").val();
+	var haveMarry = $("#haveMarry").val();
+	var haveHouse = $("#haveHouse").val();
+	var haveCar = $("#haveCar").val();
+	if (realName == "") {
+		alert("请输入真实姓名");
+		return false;
+	} else if (!validate(realName, "chineseName")) {
+		alert("请输入合法的姓名");
+		return false;
+	} else if (idCard == ""){
+		alert("请输入身份证号");
+		return false;
+	} else if (!validate(idCard, "IDcard")) {
+		alert("请输入正确的身份证号");
+		return false;
+	} else if (addr == "") {
+		alert("请输入详细的地址");
+		return false;
+	} else if (relationName == "") {
+		alert("请输入家属联系人姓名");
+		return false;
+	} else if (!validate(relationName, "chineseName")) {
+		alert("请输入合法的家属联系人姓名");
+		return false;
+	} else if (relationPhone == "") {
+		alert("请输入家属联系人手机");
+		return false;
+	} else if (!validate(relationPhone, "mobile")) {
+		alert("请输入合法的家属联系人手机");
+		return false;
+	} else if (unrelationName == "") {
+		alert("请输入朋友联系人姓名");
+		return false;
+	} else if (!validate(unrelationName, "chineseName")) {
+		alert("请输入合法的朋友联系人姓名");
+		return false;
+	} else if (unrelationPhone == "") {
+		alert("请输入朋友联系人手机");
+		return false;
+	} else if (!validate(unrelationPhone, "mobile")) {
+		alert("请输入合法的朋友联系人手机");
+		return false;
+	} else if(!$('#agreeCheck').is(':checked')){
+		alert("请阅读并同意《征信授权协议》");
+		return false;
+	} else {
+		var phone = $("#phoneVal").val();
+		var num = 0;
+		if (phone == relationPhone) {
+			num ++;
+		}
+		if (phone == unrelationPhone) {
+			num ++; 
+		}
+		if (relationPhone == unrelationPhone) {
+			num ++; 
+		}
+		if (num > 0) {
+			alert("联系人手机不能相同");
+			return false;
+		}else if (!_locationFlag) {// 定位
+			var province = $("#province").val();
+			var city = $("#city").val();
+			if (province == "") {
+				alert("请选择所在省份");
+				return false;
+			} else if (city == "") {
+				alert("请选择所在城市");
+				return false;
+			}
+			cityName = $("#province option:selected").text().trim() + $("#city option:selected").text().trim();
+		}
+	}
+	var url = "/beadwalletloanapp/app/infoVerify/appCheckLogin/saveOrUpdatePInfo.do";
+	if ($("#hisPId").val()) {
+		url += ("?hisPId=" + $("#hisPId").val());
+	}
+	$.post(
+		url,
+		{
+			"loginToken" : getLoginToken(),
+			"bId" : getUUID(),
+			"orderId" : getParameter("orderId"),
+			"name" : realName,
+			"idCard" : idCard,
+			"cityName" : cityName,
+			"addr" : addr,
+			"relationName" : relationName,
+			"relationPhone" : relationPhone,
+			"unrelationName" : unrelationName,
+			"unrelationPhone" : unrelationPhone,
+			"haveCar" : haveCar,
+			"haveHouse" : haveHouse,
+			"haveMarry" : haveMarry
+		},
+		function(data) {
+			if (data.code == "000") {
+				location.href = "gongzuoxinxi.html?orderId=" + getParameter("orderId") + "&realName=" + realName;
+			} else {
+				alert("系统繁忙，请稍后再进行操作");
+			}
+		},
+		"json"
+	);
+}
+</script>
+</body>
+
+</html>

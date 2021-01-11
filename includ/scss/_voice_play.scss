@@ -1,0 +1,111 @@
+//   <div class="audio_player">
+//         <span class="p1 animated1 infinite"></span>
+//         <span class="p2 animated1 infinite"></span>
+//         <span class="p3 animated1 infinite"></span>
+//     </div>
+.audio_player {
+    width: 18px;
+    height: 18px;
+    position: relative;
+}
+
+.audio_player span {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px #fff solid;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    margin-top: 4px;
+    margin-right: 6px;
+}
+
+.audio_player span.p1 {
+    left: 0px;
+    top: 0px;
+    width: 6px;
+    height: 6px;
+}
+
+.audio_player span.p2 {
+    left: -2px;
+    top: -3px;
+    width: 12px;
+    height: 12px;
+}
+
+.audio_player span.p3 {
+    left: -4px;
+    top: -6px;
+    width: 18px;
+    height: 18px;
+}
+
+
+/* ani */
+
+.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.animated1 {
+    -webkit-animation-duration: 1.3s;
+    animation-duration: 1.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fade1 {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+}
+
+.fade1 {
+    -webkit-animation-name: fade1;
+    animation-name: fade1;
+}
+
+@-webkit-keyframes fade2 {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+}
+
+.fade2 {
+    -webkit-animation-name: fade2;
+    animation-name: fade2;
+}
+
+@-webkit-keyframes fade3 {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.fade3 {
+    -webkit-animation-name: fade3;
+    animation-name: fade3;
+}
+
+// icon 
+

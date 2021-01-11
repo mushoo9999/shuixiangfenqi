@@ -1,0 +1,39 @@
+
+<div class="personal-left">
+    <ul class="left-nav">
+        <li class="left-selected">投资中的项目</li>
+		<li>完成投资的项目</li>
+		<li>转让的债权</li>
+		<li>买入的债权</li>
+		<li>自动投标</li>
+    </ul>
+</div>
+<div class="personal-right">
+	
+</div>
+
+<script  type="text/javascript">
+	$(document).ready(function(){
+		
+		$('.personal-right').load('invest-in.html');
+		
+			
+	
+		$('.left-nav li').on('click', function(){
+        	$(this).addClass('left-selected').siblings().removeClass('left-selected');
+        	if($('.left-nav li').eq(0).hasClass('left-selected')){
+				$('.personal-right').load('invest-in.html');
+			}else if($('.left-nav li').eq(1).hasClass('left-selected')){
+				$('.personal-right').load('invest-finished.html');
+			}else if($('.left-nav li').eq(2).hasClass('left-selected')){
+				$('.personal-right').load('debts-sold.html');
+			}else if($('.left-nav li').eq(3).hasClass('left-selected')){
+				$('.personal-right').load('debts-buy.html');
+			}else if($('.left-nav li').eq(4).hasClass('left-selected')){
+				$('.personal-right').load('invest-auto.html');
+			}
+        });
+	});
+</script>
+
+

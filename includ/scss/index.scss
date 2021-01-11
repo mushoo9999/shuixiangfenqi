@@ -1,0 +1,105 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    
+}
+.fcontent_wrapper{
+    min-height: 100%;
+    padding-top: q(40);
+}
+.fcontent_icon{
+    display: block;
+    width: q(151);
+    height: q(151);
+    margin: auto;
+    background: url(../images/sign_fail.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.fp1{
+    text-align: center;
+    font-size: q(32);
+    padding-top: q(40);
+    color: #434c4e;
+    
+}
+.fp2{
+    text-align: center;
+    padding-top: q(40);
+    color: #909090;
+    font-size: q(28);
+}
+.fp3{
+    padding: q(40) q(30);
+    line-height: 1.6;
+    font-size: q(32);
+    color: #909090;
+    text-align: center;
+}
+.finner_text{
+    text-align: center;
+    padding-top: q(30);
+}
+.fbtn_close{
+    span{
+        width: q(670);
+        height: q(72);
+        background: #3f8dff;
+        text-align: center;
+        color: #fff;
+        display: block;
+        font-size: q(32);
+        line-height: q(72);
+        position: absolute;
+        left: q((750-670)/2);
+        top: 60%;
+    }
+}
+.scontent_wrapper{
+    
+    min-height: 100%;
+    padding-top: q(40);
+}
+.scontent_icon{
+    
+    display: block;
+    width: q(156);
+    height: q(151);
+    margin: auto;
+    background: url(../images/sign_succ.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.sp1{
+    
+    text-align: center;
+    font-size: q(32);
+    padding-top: q(40);
+    color: 434c4e;
+}
+.sp2{
+    
+    text-align: center;
+    padding-top: q(40);
+    color: #909090;
+    font-size: q(28);
+}
+.sbtn_close{
+    width: 100%;
+    margin-top: q(40);
+    span{
+        
+        width: q(670);
+        height: q(72);
+        background: #3f8dff;
+        text-align: center;
+        color: #fff;
+        display: block;
+        font-size: q(32);
+        line-height: q(72);
+        position: absolute;
+        left: q((750-670)/2);
+        top: 60%;
+    }
+}
+ 

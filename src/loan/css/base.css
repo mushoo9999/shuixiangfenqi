@@ -1,0 +1,1393 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+  line-height: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  text-rendering: optimizelegibility; }
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+a, img {
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  border: 0;
+  outline: none; }
+
+img {
+  display: inline-block;
+  border-style: none; }
+
+a:active, a:hover {
+  color: inherit;
+  outline-width: 0; }
+
+ol, ul, li {
+  list-style: none; }
+
+input {
+  border: none 0;
+  outline: none;
+  -webkit-appearance: none; }
+
+i, em {
+  font-style: normal; }
+
+button, input, optgroup, select, textarea {
+  font-family: 'microsoft yahei', sans-serif;
+  font-size: 100%;
+  line-height: 1.0;
+  margin: 0; }
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button; }
+
+[hidden] {
+  display: none; }
+
+.inline {
+  display: inline; }
+
+.inline-block {
+  display: inline-block; }
+
+.block {
+  display: block; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.fr {
+  float: right; }
+
+.fl {
+  float: left; }
+
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: ''; }
+
+.my-placeholder {
+  color: #AAA; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #AAA; }
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #AAA; }
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #AAA; }
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #AAA; }
+
+/*我是分割线*/
+/* 登录 */
+.login-body {
+  height: 100%;
+  padding: 0 .97222rem 0 .97222rem;
+  background: #f8fffd url(../img/reg_bg.png) center bottom no-repeat;
+  background-size: 100% 100%; }
+  .login-body input {
+    padding: .69444rem 0 .27778rem .90278rem;
+    width: 100%;
+    font-size: .375rem;
+    background-color: transparent;
+    border-bottom: 1px solid #cdcdcf;
+    display: block; }
+
+.logo {
+  margin: 0 auto 1.38889rem;
+  padding-top: 4.1666666667rem;
+  width: 4.18056rem;
+  height: 1.23611rem;
+  background: url(../img/logo.png) center center no-repeat;
+  background-size: 100%; }
+
+.login-phone {
+  background: url(../img/login_usr.png) 0.20833rem 0.625rem no-repeat;
+  background-size: .48611rem .48611rem; }
+
+.login-password {
+  background: url(../img/login_lock.png) 0.20833rem 0.66667rem no-repeat;
+  background-size: .48611rem .48611rem; }
+
+.login-btn {
+  margin: 1.11111rem 0 .55556rem 0;
+  width: 100%;
+  height: .97222rem;
+  background-color: #3f8dff; }
+
+.login-btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: .41667rem;
+  text-align: center;
+  line-height: .97222rem; }
+
+.login-forget {
+  text-align: center; }
+  .login-forget a {
+    font-size: .36111rem;
+    color: #3f8dff; }
+
+.login-toreg {
+  position: absolute;
+  left: 0;
+  bottom: 0.5555555556rem;
+  width: 100%;
+  text-align: center;
+  font-size: .36111rem;
+  color: #fff; }
+
+.login-toreg a {
+  margin-left: .06944rem;
+  font-weight: bold;
+  font-size: .41667rem;
+  color: #fff; }
+
+.login-bg {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 3.05556rem;
+  background: url(../img/login_bg.png) center center no-repeat;
+  background-size: 100%; }
+
+/* 注册 */
+.reg-body {
+  padding: 0 1.0833333333rem;
+  height: 100%;
+  background-color: #fbfbfb;
+  background: url(../img/reg_bg.png) center center no-repeat;
+  background-size: 100% 100%; }
+  .reg-body input {
+    width: 100%;
+    padding: 1.0833333333rem 0 0.2777777778rem 0;
+    font-size: 0.375rem;
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #d9d9db;
+    line-height: 0.4166666667rem;
+    display: block; }
+
+.reg-valid {
+  position: relative; }
+  .reg-valid span {
+    position: absolute;
+    bottom: 0.3611111111rem;
+    right: 0;
+    color: #3f8dff; }
+  .reg-valid a {
+    padding: 0 0.4444444444rem;
+    color: #3f8dff;
+    font-size: 0.375rem; }
+  .reg-valid img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #3f8dff;
+    height: 1.0666666667rem;
+    width: 3.5333333333rem; }
+
+.reg-cb {
+  margin-top: 1.0833333333rem;
+  font-size: 0.3333333333rem; }
+  .reg-cb a {
+    font-size: 0.3333333333rem; }
+  .reg-cb .cb {
+    margin-right: 0.1388888889rem;
+    width: 0.3472222222rem;
+    height: 0.3472222222rem;
+    border: 1px solid #3f8dff;
+    float: left; }
+  .reg-cb .cb-checked {
+    background: url(../img/reg_cb.png) center center no-repeat;
+    background-size: 0.3472222222rem 0.3472222222rem; }
+
+.reg-btn {
+  margin-top: 0.5555555556rem;
+  height: 0.9722222222rem; }
+  .reg-btn a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 0.9722222222rem;
+    color: #fff;
+    background-color: #3f8dff;
+    font-size: 0.4305555556rem;
+    text-align: center; }
+
+/* 忘记密码 */
+.forget-body {
+  padding: 0 1.1111111111rem;
+  background-color: #fbfbfb;
+  background: url(../img/reg_bg.png) center center no-repeat;
+  background-size: 100% 100%; }
+  .forget-body input {
+    width: 100%;
+    padding: 1.0833333333rem 0 0.2777777778rem 0;
+    font-size: 0.375rem;
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #d9d9db;
+    display: block; }
+
+.forget-valid {
+  position: relative; }
+  .forget-valid span {
+    position: absolute;
+    bottom: 0.3611111111rem;
+    right: 0;
+    color: #3f8dff; }
+  .forget-valid a {
+    padding: 0 0.4444444444rem;
+    color: #3f8dff;
+    font-size: 0.375rem; }
+  .forget-valid img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #3f8dff;
+    height: 1.0666666667rem;
+    width: 3.5333333333rem; }
+
+.forget-btn {
+  display: block;
+  margin-top: 1.1111111111rem;
+  width: 100%;
+  height: 0.9722222222rem;
+  line-height: 0.9722222222rem;
+  font-size: 0.4444444444rem;
+  color: #fff;
+  text-align: center;
+  background-color: #3f8dff; }
+
+/* 设置 */
+/* 个人 */
+.account-body {
+  background-color: #fdfdfd; }
+
+.account {
+  padding-top: 0.8666666667rem;
+  height: 5.8rem;
+  background: url(../img/account_bg.png) center bottom no-repeat;
+  background-size: 100% auto; }
+  .account p {
+    font-size: 0.5333333333rem;
+    color: #fff;
+    text-align: center; }
+
+.avatar {
+  margin: 0 auto 0.32rem auto;
+  width: 2.1333333333rem;
+  height: 2.1333333333rem;
+  border-radius: 50%; }
+  .avatar img {
+    display: block;
+    width: 100%;
+    height: 100%; }
+
+.accout-info {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.4266666667rem;
+  color: #fff; }
+  .accout-info span {
+    padding-left: 0.5333333333rem; }
+
+.account-list1,
+.account-list2 {
+  margin-top: 0.16rem;
+  padding: 0 0.32rem;
+  background-color: #fff; }
+
+.listItem {
+  padding: 0.3333333333rem 0 0.3333333333rem 0.2133333333rem;
+  font-size: 0.3733333333rem;
+  border-bottom: 1px solid #ececed;
+  background: url(../img/account_arrow.png) 8.8rem center no-repeat;
+  background-size: 0.1333333333rem 0.2666666667rem; }
+  .listItem:last-child {
+    background-image: none; }
+    .listItem:last-child span {
+      margin-left: 2rem;
+      color: #909090; }
+
+.work-time {
+  padding-top: 0.3866666667rem;
+  padding-bottom: 0.9866666667rem;
+  font-size: 0.32rem;
+  color: #909090;
+  text-align: center; }
+
+.version {
+  font-size: 0.32rem;
+  color: #cdcdcf;
+  text-align: center; }
+
+/* 我的银行卡 */
+.bcard-body {
+  background-color: #fdfdfd; }
+
+.bankgap {
+  padding-top: 0.2666666667rem; }
+
+.bankcard {
+  margin: 0 auto;
+  padding-left: 0.32rem;
+  width: 9.6533333333rem;
+  height: 5.52rem;
+  background: url(../img/bankcard.png) center center no-repeat;
+  background-size: 9.6533333333rem 5.52rem; }
+
+.bank {
+  padding-top: 0.8rem;
+  font-size: 0.5333333333rem;
+  color: #fff; }
+
+.card-number {
+  padding: 1.1333333333rem 0;
+  font-size: 0.6666666667rem;
+  color: #fff;
+  text-shadow: 1px 1px 1px #376ebe; }
+
+.card-owner {
+  font-size: 0.4rem;
+  color: #fff;
+  text-shadow: 1px 1px 1px #376ebe; }
+  .card-owner i {
+    opacity: 0.6; }
+  .card-owner span {
+    padding-left: 0.32rem; }
+
+/* 我的银行卡缺省 */
+.bcnone-body {
+  background-color: #fdfdfd; }
+
+.none-info {
+  padding-top: 7.2rem;
+  font-size: 0.4rem;
+  color: #cdcdcf;
+  background: url(../img/loan_none.png) center 3.2rem no-repeat;
+  background-size: 3.2266666667rem 3.4666666667rem;
+  text-align: center; }
+
+/* 我的借款 */
+.loan-body {
+  background-color: #fdfdfd; }
+
+.loan-item {
+  margin-bottom: 0.16rem;
+  height: 2.32rem;
+  overflow: hidden;
+  background: url(../img/account_arrow.png) 9.3333333333rem center no-repeat;
+  background-size: 0.1333333333rem 0.2666666667rem;
+  background-color: #fff; }
+
+.loan-left {
+  padding-left: 0.5333333333rem; }
+
+.loan-number {
+  padding-top: 0.5333333333rem;
+  padding-bottom: 0.3466666667rem;
+  font-size: 0.5333333333rem;
+  color: #434c4e; }
+  .loan-number span {
+    padding-right: 0.1333333333rem; }
+
+.loan-time {
+  font-size: 0.3733333333rem;
+  color: #909090; }
+
+.loan-state {
+  padding-top: 0.9333333333rem;
+  padding-right: 0.9333333333rem;
+  font-size: 0.3733333333rem;
+  color: #434c4e; }
+  .loan-state .overdue {
+    font-weight: bold;
+    color: #e8ac5c; }
+
+/* 借款 审核中、签约中、使用中 */
+/*还款*/
+.review-body,
+.sign-body {
+  background-color: #fdfdfd; }
+
+.review-state,
+.sign-state,
+.use-state,
+.repay-state {
+  height: 3.6rem;
+  background-color: #fff; }
+  .review-state h3,
+  .sign-state h3,
+  .use-state h3,
+  .repay-state h3 {
+    padding-top: 0.5333333333rem;
+    padding-bottom: 0.4266666667rem;
+    font-size: 0.4266666667rem;
+    font-weight: normal;
+    color: #434c4e;
+    text-align: center; }
+
+/* .review-num,.sign-num,.use-num,.repay-num{
+    font-size: q(72);
+    color: #e8ac5c;
+    text-align: center;
+} */
+.review-icon,
+.sign-icon {
+  margin: 0 auto;
+  margin-top: 0.3333333333rem;
+  width: 1.9733333333rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.4266666667rem;
+  background-color: #e8ac5c;
+  border-radius: 0.2133333333rem; }
+
+.review-detail,
+.sign-detail,
+.use-detail,
+.settle-detail {
+  background-color: #fff;
+  margin-top: 0.16rem;
+  padding: 0.5333333333rem 0.4266666667rem; }
+  .review-detail h3,
+  .sign-detail h3,
+  .use-detail h3,
+  .settle-detail h3 {
+    padding-bottom: 0.4266666667rem;
+    font-size: 0.4266666667rem;
+    font-weight: normal;
+    color: #434c4e;
+    opacity: .6; }
+  .review-detail p,
+  .sign-detail p,
+  .use-detail p,
+  .settle-detail p {
+    font-size: 0.3733333333rem;
+    color: #434c4e;
+    overflow: hidden;
+    padding-bottom: 0.32rem;
+    line-height: 1.2; }
+    .review-detail p:last-child,
+    .sign-detail p:last-child,
+    .use-detail p:last-child,
+    .settle-detail p:last-child {
+      padding-bottom: 0; }
+  .review-detail span,
+  .sign-detail span,
+  .use-detail span,
+  .settle-detail span {
+    float: right; }
+
+.gap {
+  padding-top: 0.16rem; }
+
+/*公共头部*/
+.head_top {
+  height: 1.0666666667rem;
+  width: 100%;
+  background-color: #3f8dff;
+  text-align: center;
+  color: #fff;
+  font-size: 0.4533333333rem;
+  line-height: 1.0666666667rem;
+  position: relative; }
+  .head_top i {
+    position: absolute;
+    background: url("../img/jiantou_left.png") no-repeat center center;
+    background-size: 45% 40%;
+    height: 100%;
+    width: 0.6666666667rem;
+    display: inline-block;
+    left: 0.2666666667rem;
+    top: 0; }
+
+/*使用中*/
+.container {
+  background-color: #fdfdfd; }
+
+.use-time {
+  padding-top: 0.44rem;
+  font-size: 0.3733333333rem;
+  color: #909090;
+  text-align: center; }
+
+.use-btns {
+  margin-top: 0.5333333333rem;
+  text-align: center; }
+  .use-btns a {
+    display: inline-block;
+    width: 3.7333333333rem;
+    height: 0.96rem;
+    font-size: 0.4266666667rem;
+    color: #fefeff;
+    line-height: 0.96rem;
+    text-align: center;
+    background-color: #3f8dff;
+    border-radius: 0.1333333333rem; }
+    .use-btns a:first-child {
+      margin-right: 0.9333333333rem; }
+
+/* 还款详情 */
+/* .repay-info{
+    padding-top: q(40);
+    color: #434c4e;
+    font-size: q(28);
+    overflow: hidden;
+    text-align:center;
+    p{
+        display: inline-block;
+        &:first-child{
+            padding-right: q(70);
+        }
+    }
+} */
+.repay-detail {
+  padding: 0 0.2666666667rem;
+  background-color: #fff; }
+  .repay-detail:last-child .repay-item {
+    border: 0; }
+
+.repay-item {
+  padding: 0 0.2666666667rem;
+  border-bottom: 0.0266666667rem solid #ececed; }
+  .repay-item > p {
+    padding: 0.28rem 0 0.32rem;
+    overflow: hidden; }
+    .repay-item > p:first-child {
+      font-size: 0.3733333333rem;
+      color: #434c4e; }
+    .repay-item > p:last-child {
+      font-size: 0.32rem; }
+  .repay-item .repay-cur {
+    display: block;
+    width: 1.12rem;
+    height: 0.56rem;
+    line-height: 0.56rem;
+    color: #fff;
+    text-align: center;
+    background-color: #3f8dff;
+    border-radius: 0.28rem; }
+  .repay-item .repay-interest {
+    color: #909090; }
+
+/*提前还款*/
+.early-info,
+.late-info {
+  background-color: #fff;
+  padding: 0 0.2666666667rem; }
+  .early-info p,
+  .late-info p {
+    padding-left: 0.5333333333rem;
+    padding-right: 0.5333333333rem;
+    overflow: hidden;
+    font-size: 0.36rem;
+    color: #909090; }
+    .early-info p:first-child,
+    .late-info p:first-child {
+      padding-top: 0.5333333333rem;
+      padding-bottom: 0.4rem; }
+    .early-info p:last-child,
+    .late-info p:last-child {
+      padding-bottom: 0.5333333333rem;
+      border-bottom: 1px solid #ececed; }
+  .early-info .left-num,
+  .late-info .left-num {
+    color: #434c4e; }
+
+.early-countdown,
+.late-countdown {
+  overflow: hidden;
+  padding: 0.2666666667rem 0.8rem;
+  font-size: 0.32rem;
+  color: #909090;
+  background-color: #fff; }
+  .early-countdown em,
+  .late-countdown em {
+    font-size: 0.3733333333rem;
+    font-weight: bold; }
+
+.early-btn,
+.late-btn {
+  display: block;
+  margin: 0.6rem auto;
+  width: 8.9333333333rem;
+  height: 0.96rem;
+  line-height: 0.96rem;
+  text-align: center;
+  font-size: 0.4266666667rem;
+  color: #fff;
+  background-color: #3f8dff; }
+
+/* 已结清 */
+.settle-info {
+  color: #909090; }
+
+.settle-state {
+  background: #fff url(../img/settle.png) right top no-repeat;
+  background-size: 2.2133333333rem 2.04rem; }
+
+.settle-btn {
+  display: block;
+  padding-top: 0.5333333333rem;
+  padding-right: 0.8rem;
+  font-size: 0.3733333333rem;
+  color: #3f8dff;
+  text-align: right; }
+
+.settle-body,
+.late-body,
+.early-body,
+.repayment-body,
+.safe-body,
+.password-body,
+.feedback-body {
+  background-color: #fdfdfd; }
+
+/* 账户安全 */
+.safe-phone {
+  overflow: hidden;
+  padding: 0.3333333333rem 0.5333333333rem;
+  font-size: 0.36rem;
+  color: #434c4e;
+  background-color: #fff; }
+  .safe-phone .phone-num {
+    color: #909090;
+    font-size: 0.32rem; }
+
+.safe-set {
+  padding: 0.3333333333rem 0 0.3333333333rem 0.5333333333rem;
+  font-size: 0.3733333333rem;
+  background: #fff url(../img/account_arrow.png) 9.3333333333rem center no-repeat;
+  background-size: 0.1333333333rem 0.2666666667rem; }
+
+.logout {
+  position: fixed;
+  left: 50%;
+  bottom: 1.0666666667rem;
+  transform: translateX(-50%);
+  width: 8.9333333333rem;
+  height: 0.96rem;
+  line-height: 0.96rem;
+  text-align: center;
+  font-size: 0.4266666667rem;
+  color: #fff;
+  background-color: #fd6a6a;
+  border: none;
+  outline: none; }
+
+/* 修改密码 */
+.cur-password,
+.new-password {
+  padding: 0.5333333333rem;
+  background-color: #fff; }
+  .cur-password p,
+  .new-password p {
+    padding-bottom: 0.5333333333rem;
+    font-size: 0.3733333333rem;
+    color: #434c4e; }
+  .cur-password input,
+  .new-password input {
+    width: 100%;
+    line-height: 0.4266666667rem;
+    padding: 0.3466666667rem 0.2666666667rem;
+    font-size: 0.3733333333rem;
+    background-color: #f6f6f6; }
+
+.new-password {
+  padding-top: 0; }
+
+.confirm-btn {
+  display: block;
+  margin: 0.5333333333rem auto;
+  width: 8.9333333333rem;
+  height: 0.96rem;
+  line-height: 0.96rem;
+  text-align: center;
+  font-size: 0.4266666667rem;
+  color: #fff;
+  background-color: #3f8dff;
+  border: none;
+  outline: none; }
+
+/* 意见反馈 */
+.feedback-input {
+  padding: 0.5333333333rem;
+  background-color: #fff; }
+  .feedback-input input {
+    width: 100%;
+    padding: 0.3466666667rem 0.2666666667rem;
+    line-height: 0.4266666667rem;
+    font-size: 0.3733333333rem;
+    color: #cccdcf;
+    background-color: #f6f6f6; }
+  .feedback-input textarea {
+    width: 100%;
+    padding: 0.36rem 0.2933333333rem;
+    font-size: 0.36rem;
+    line-height: 1.5;
+    border: none;
+    outline: none;
+    background-color: #f6f6f6; }
+
+.feedback-btn,
+.bank-btn {
+  display: block;
+  margin: 0.5333333333rem auto;
+  width: 8.9333333333rem;
+  height: 0.96rem;
+  line-height: 0.96rem;
+  text-align: center;
+  font-size: 0.4266666667rem;
+  color: #fff;
+  background-color: #3f8dff;
+  border: none;
+  outline: none; }
+
+/* 银行卡签约 */
+.bank-detail,
+.agreement-detail {
+  padding: 0.8rem 0.5333333333rem;
+  color: #fff;
+  background-color: #3f8dff; }
+  .bank-detail p,
+  .agreement-detail p {
+    line-height: 0.4266666667rem;
+    font-size: 0.3733333333rem;
+    overflow: hidden; }
+    .bank-detail p:nth-child(2),
+    .agreement-detail p:nth-child(2) {
+      padding: 0.5333333333rem 0; }
+
+.bank-phone {
+  padding: 0 0.5333333333rem;
+  font-size: 0.3733333333rem;
+  color: #434c4e; }
+  .bank-phone p {
+    padding: 0.4933333333rem 0; }
+  .bank-phone input {
+    padding: 0.3866666667rem 0.2rem;
+    width: 100%;
+    line-height: 0.4266666667rem;
+    font-size: 0.3733333333rem;
+    color: #434c4e;
+    background-color: #f6f6f6; }
+
+.bank-btn {
+  position: fixed;
+  bottom: 0.4rem;
+  left: 50%;
+  transform: translateX(-50%); }
+
+/* 签约协议 */
+.agreement-btn {
+  padding: 0.4rem 0;
+  width: 100%;
+  height: 1.7733333333rem;
+  background-color: #fff;
+  box-shadow: 0 -0.1066666667rem 0.2666666667rem rgba(144, 144, 144, 0.3); }
+  .agreement-btn button {
+    margin: 0 auto;
+    display: block;
+    width: 8.9333333333rem;
+    height: 0.96rem;
+    line-height: 0.96rem;
+    text-align: center;
+    font-size: 0.4266666667rem;
+    color: #fff;
+    background-color: #ccc;
+    border: none;
+    outline: none;
+    pointer-events: none; }
+    .agreement-btn button.btn-active {
+      background-color: #3f8dff;
+      pointer-events: auto; }
+
+.scroll-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto; }
+
+.agreement-content {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none; }
+
+.agreement-detail {
+  width: 100%; }
+
+/* 新还款 */
+.repay-nav {
+  padding: 0.4rem 0;
+  text-align: center; }
+
+.repay-lis {
+  display: inline-block;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  font-size: 0.4rem;
+  color: #fff;
+  opacity: 0.6; }
+  .repay-lis:nth-of-type(1) {
+    padding-right: 0.6666666667rem; }
+
+.repay-active {
+  font-size: 0.48rem;
+  opacity: 1;
+  transition: 0.3s; }
+
+.gap-100 {
+  padding: 0.6666666667rem 0; }
+
+.btn-wrap {
+  text-align: center; }
+
+.loan-btn {
+  width: 7.3333333333rem;
+  height: 1.1733333333rem;
+  line-height: 1.1733333333rem;
+  font-size: 0.44rem;
+  color: #fff;
+  background-color: #3f8dff;
+  border: 0;
+  outline: 0;
+  border-radius: 0.16rem;
+  box-shadow: 0 0.0666666667rem 0.0666666667rem rgba(63, 141, 255, 0.4); }
+
+/* 正常还款2.0 */
+.repay-money {
+  text-align: center;
+  color: #fff; }
+
+.repay-info {
+  padding-top: 0.4rem;
+  font-size: 0.32rem; }
+
+.repay-num {
+  padding: 0.8rem 0;
+  font-size: 0.96rem; }
+
+.repay-detail {
+  padding: 0.5333333333rem; }
+  .repay-detail p {
+    font-size: 0.3733333333rem;
+    color: #434c4e;
+    padding-bottom: 0.4266666667rem; }
+    .repay-detail p span {
+      font-weight: bold; }
+    .repay-detail p:last-of-type {
+      padding-bottom: 0; }
+
+.repay-btn {
+  width: 3.7333333333rem;
+  height: 0.96rem;
+  line-height: 0.96rem;
+  font-size: 0.44rem;
+  color: #fff;
+  background-color: #3f8dff;
+  border: 0;
+  outline: 0;
+  border-radius: 0.16rem;
+  box-shadow: 0 0.0666666667rem 0.0666666667rem rgba(63, 141, 255, 0.4); }
+  .repay-btn:first-of-type {
+    margin-right: 0.6666666667rem; }
+
+.gap-250 {
+  padding: 1.6666666667rem 0; }
+
+.agreement {
+  display: block;
+  padding-top: 0.5333333333rem;
+  padding-right: 0.4266666667rem;
+  font-size: 0.3733333333rem;
+  text-align: right; }
+
+.repay-none-nav {
+  background: -webkit-linear-gradient(#3f8dff, #7db2ff);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#3f8dff, #7db2ff);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#3f8dff, #7db2ff);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#3f8dff, #7db2ff);
+  /* 标准的语法 */ }
+
+.repay-normal-nav {
+  background: -webkit-linear-gradient(#3f8dff, #4591ff);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#3f8dff, #4591ff);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#3f8dff, #4591ff);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#3f8dff, #4591ff);
+  /* 标准的语法 */ }
+
+.repay-late-nav {
+  background: -webkit-linear-gradient(#e16666, #e36a6b);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#e16666, #e36a6b);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#e16666, #e36a6b);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#e16666, #e36a6b);
+  /* 标准的语法 */ }
+
+.repay-normal-content .repay-money {
+  background: -webkit-linear-gradient(#4591ff, #5fa0ff);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#4591ff, #5fa0ff);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#4591ff, #5fa0ff);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#4591ff, #5fa0ff);
+  /* 标准的语法 */ }
+
+.repay-normal-content .repay-detail {
+  background: -webkit-linear-gradient(#eff6ff, #f2f7ff);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#eff6ff, #f2f7ff);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#eff6ff, #f2f7ff);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#eff6ff, #f2f7ff);
+  /* 标准的语法 */ }
+
+.repay-normal-content .agreement {
+  color: #3f8dff; }
+
+.repay-late-content .repay-money {
+  background: -webkit-linear-gradient(#e36a6b, #ec7778);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#e36a6b, #ec7778);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#e36a6b, #ec7778);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#e36a6b, #ec7778);
+  /* 标准的语法 */ }
+
+.repay-late-content .repay-detail {
+  background: -webkit-linear-gradient(#fdf2f2, #fef3f3);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#fdf2f2, #fef3f3);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#fdf2f2, #fef3f3);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#fdf2f2, #fef3f3);
+  /* 标准的语法 */ }
+
+.repay-late-content .agreement {
+  color: #e16666; }
+
+.late-warn {
+  padding: 0.8rem 0.5333333333rem;
+  line-height: 0.64rem;
+  font-size: 0.4rem;
+  color: #434c4e;
+  text-indent: 2em; }
+
+.repay-late-btn {
+  width: 7.3333333333rem;
+  height: 1.1733333333rem;
+  line-height: 1.1733333333rem;
+  font-size: 0.44rem;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: 0.16rem;
+  box-shadow: 0 0.0666666667rem 0.0666666667rem rgba(224, 103, 102, 0.4);
+  background: -webkit-linear-gradient(#e06666, #f68585);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#e06666, #f68585);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#e06666, #f68585);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#e06666, #f68585);
+  /* 标准的语法 */ }
+
+.loan-lis {
+  position: relative;
+  margin-bottom: 0.2666666667rem;
+  padding: 0.5333333333rem;
+  font-size: 0.3733333333rem;
+  color: #434c4e;
+  background: #fff url(../img/account_arrow.png) 9.2rem center no-repeat;
+  background-size: 0.1333333333rem 0.2666666667rem; }
+  .loan-lis p {
+    padding-bottom: 0.4rem; }
+    .loan-lis p:last-of-type {
+      padding-bottom: 0; }
+
+.loan-settle-lis .repay-state {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.1333333333rem;
+  height: 2.1333333333rem;
+  background: url(../img/repay_settle.png) right top no-repeat;
+  background-size: 2.1333333333rem 2.1333333333rem; }
+
+.loan-back-lis .repay-state {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.1333333333rem;
+  height: 2.1333333333rem;
+  background: url(../img/repay_back.png) right top no-repeat;
+  background-size: 2.1333333333rem 2.1333333333rem; }
+
+body {
+  overflow: hidden;
+  background-color: #fdfdfd; }
+
+/* 审核2.0 */
+.review-state {
+  width: 100%;
+  height: 6rem; }
+
+.review-loan-state {
+  background: url(../img/shenhe_fangkuan.png) center center no-repeat;
+  background-size: 10rem 6rem; }
+
+.review-cur-state {
+  background: url(../img/shenhe_zhong.png) center center no-repeat;
+  background-size: 10rem 6rem; }
+
+.review-pass-state {
+  background: url(../img/shenhe_tongguo.png) center center no-repeat;
+  background-size: 10rem 6rem; }
+
+.review-failnow-state {
+  background: url(../img/shenhe_zanweiguo.png) center center no-repeat;
+  background-size: 10rem 6rem; }
+
+.review-failforever-state {
+  background: url(../img/shenhe_yongweiguo.png) center center no-repeat;
+  background-size: 10rem 6rem; }
+
+/* 放款 */
+.loan-detail {
+  padding: 0.5333333333rem;
+  font-size: 0.3733333333rem;
+  color: #434c4e;
+  background-color: #fff; }
+  .loan-detail p {
+    position: relative;
+    padding-bottom: 0.4266666667rem; }
+    .loan-detail p:nth-of-type {
+      padding-bottom: 0; }
+  .loan-detail span {
+    padding-left: 0.1333333333rem;
+    font-weight: bold; }
+  .loan-detail i {
+    position: absolute;
+    top: -0.1333333333rem;
+    right: -0.5333333333rem;
+    display: block;
+    width: 4.8rem;
+    height: 0.6133333333rem;
+    background: url("../img/xiao!.png") 4rem center no-repeat;
+    background-size: 0.32rem 0.32rem; }
+
+.sign-btn {
+  position: absolute;
+  bottom: 2.6666666667rem;
+  left: 0;
+  width: 100%;
+  height: 1.1733333333rem;
+  text-align: center; }
+  .sign-btn button {
+    width: 7.3333333333rem;
+    line-height: 1.1733333333rem;
+    font-size: 0.4266666667rem;
+    color: #fff;
+    text-align: center;
+    background-color: #3f8dff;
+    border: 0;
+    outline: 0;
+    border-radius: 0.16rem;
+    box-shadow: 0 0.0666666667rem 0.0666666667rem rgba(63, 141, 255, 0.4); }
+
+.kefu {
+  position: absolute;
+  bottom: 1.3333333333rem;
+  left: 0;
+  width: 100%;
+  font-size: 0.4rem;
+  color: #909090;
+  text-align: center; }
+
+/* 审核未通过 */
+.review-fail {
+  padding: 0.5333333333rem;
+  font-size: 0.4266666667rem;
+  color: #434c4e;
+  line-height: 0.64rem; }
+  .review-fail dl:first-of-type {
+    padding-bottom: 0.4266666667rem; }
+  .review-fail dd {
+    font-weight: bold; }
+
+/* 审核中 */
+.review-cur p {
+  padding: 3.3333333333rem 0;
+  text-align: center;
+  font-size: 0.4rem;
+  font-weight: bold;
+  color: #434c4e; }
+
+/* 弹框 */
+.popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  .popup .poup-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.3s; }
+
+.popup-detail {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: 0 0.4666666667rem;
+  width: 100%;
+  height: 7.9333333333rem;
+  background-color: #fff;
+  transition: transform 0.3s ease-out 0s;
+  -webkit-transform: translate3d(0, 100%, 0);
+  -moz-transform: translate3d(0, 100%, 0);
+  -ms-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0); }
+  .popup-detail h3 {
+    padding-top: 0.56rem;
+    padding-bottom: 0.5333333333rem;
+    font-size: 0.48rem;
+    color: #3f8dff;
+    text-align: center;
+    font-weight: normal;
+    border-bottom: 1px solid #ececed; }
+  .popup-detail p {
+    font-size: 0.4rem;
+    color: #434c4e;
+    text-align: center; }
+    .popup-detail p:first-of-type {
+      padding-top: 0.6666666667rem;
+      padding-bottom: 1.7333333333rem; }
+    .popup-detail p:last-of-type {
+      font-size: 0.48rem; }
+
+.popup-show .poup-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3; }
+
+.popup-show .popup-detail {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.x-btn {
+  margin: 0.2666666667rem auto 0;
+  width: 100%;
+  height: 2.4rem;
+  background: url("../img/x2.png") center center no-repeat;
+  background-size: 0.8rem 0.8rem; }
+
+.review-wrap {
+  overflow: hidden; }
+
+/* 邀请 */
+.invite-banner {
+  width: 100%;
+  height: 4.96rem;
+  background: url("../img/invite_banner.png") center center no-repeat;
+  background-size: 100% 100%; }
+
+.invite-num {
+  padding: 0 0.5333333333rem;
+  font-size: 0.4rem;
+  color: #434c4e;
+  line-height: 1.2rem; }
+  .invite-num em {
+    color: #e8ac5c; }
+
+.invite-methods dt {
+  padding: 0 0.5333333333rem;
+  font-size: 0.4rem;
+  color: #434c4e; }
+
+.invite-lis {
+  padding: 0.6rem 0 0.5333333333rem; }
+  .invite-lis ul {
+    display: table;
+    width: 100%; }
+  .invite-lis li {
+    display: table-cell;
+    width: 25%;
+    height: 1.88rem; }
+
+.invite-row1 li:nth-of-type(1) {
+  background: url("../img/wechat.png") center center no-repeat;
+  background-size: 1.3333333333rem 1.88rem; }
+
+.invite-row1 li:nth-of-type(2) {
+  background: url("../img/friends.png") center center no-repeat;
+  background-size: 1.3333333333rem 1.88rem; }
+
+.invite-row1 li:nth-of-type(3) {
+  background: url("../img/qq.png") center center no-repeat;
+  background-size: 1.3333333333rem 1.88rem; }
+
+.invite-row1 li:nth-of-type(4) {
+  background: url("../img/space.png") center center no-repeat;
+  background-size: 1.3333333333rem 1.88rem; }
+
+.invite-row2 {
+  margin-top: 0.4rem; }
+  .invite-row2 li:nth-of-type(1) {
+    background: url("../img/weibo.png") center center no-repeat;
+    background-size: 1.3333333333rem 1.88rem; }
+  .invite-row2 li:nth-of-type(2) {
+    background: url("../img/msg.png") center center no-repeat;
+    background-size: 1.3333333333rem 1.88rem; }
+
+.invite-intro {
+  padding: 0 0.5333333333rem;
+  font-size: 0.3466666667rem;
+  color: #909090;
+  line-height: 0.64rem;
+  text-indent: 2em; }
+
+.invite-ticket {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.9866666667rem;
+  color: #fff;
+  font-size: 0.4rem;
+  line-height: 0.9866666667rem;
+  background-color: #e8ac5c; }
+
+.tickets-num {
+  float: left;
+  padding-left: 0.5333333333rem; }
+  .tickets-num em {
+    font-weight: bold; }
+
+.tickets-btn {
+  float: right;
+  padding-right: 0.5333333333rem; }
+
+.quan-wrap {
+  padding: 0.5333333333rem; }
+
+.quan {
+  display: table;
+  margin: 0 auto 0.5333333333rem;
+  width: 8.9333333333rem;
+  height: 3.4666666667rem;
+  color: #fff;
+  background: url("../img/quan_bg.png") center center no-repeat;
+  background-size: 100% 100%; }
+  .quan:last-of-type {
+    margin-bottom: 0; }
+
+.quan-left, .quan-right {
+  display: table-cell;
+  width: 50%;
+  vertical-align: middle; }
+
+.quan-left {
+  text-align: center; }
+  .quan-left p {
+    font-size: 0.48rem; }
+
+.quan-term {
+  padding-bottom: 0.4rem;
+  font-size: 0.4rem; }
+  .quan-term em {
+    font-size: 1.0666666667rem; }
+
+.quan-tips {
+  font-size: 0.64rem;
+  opacity: 0.1; }
+
+.quan-time p {
+  font-size: 0.32rem; }
+  .quan-time p:first-of-type {
+    padding: 0.32rem 0; }
+
+.popup-hetong .popup-detail {
+  padding: 0;
+  height: auto;
+  text-align: center; }
+  .popup-hetong .popup-detail ul {
+    background-color: #ececed;
+    padding-bottom: 0.2666666667rem; }
+  .popup-hetong .popup-detail li {
+    background-color: #fff;
+    height: 0.9333333333rem;
+    line-height: 0.9333333333rem;
+    border-bottom: 1px solid #ececed; }
+    .popup-hetong .popup-detail li a {
+      font-size: 0.48rem;
+      color: #434c4e; }
+  .popup-hetong .popup-detail button {
+    height: 0.9333333333rem;
+    line-height: 0.9333333333rem;
+    width: 100%;
+    font-size: 0.48rem;
+    background-color: #3f8dff;
+    border: 0;
+    outline: 0;
+    color: #fff; }

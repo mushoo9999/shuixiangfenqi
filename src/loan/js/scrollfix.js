@@ -1,0 +1,1 @@
+!function(){var o=function(o){var e,t;o=o||document.querySelector(o),o&&o.addEventListener("touchstart",function(l){e=l.touches[0].pageY,t=o.scrollTop,t<=0&&(o.scrollTop=1),t+o.offsetHeight>=o.scrollHeight&&(o.scrollTop=o.scrollHeight-o.offsetHeight-1)},!1)};"undefined"!=typeof window&&"undefined"==typeof module?window.ScrollFix=o:module.exports=o}();

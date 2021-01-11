@@ -1,0 +1,126 @@
+%ani-tada{
+    -webkit-animation: tada 1.5s 0.5s infinite linear both;
+    animation: tada 1.5s 0.5s infinite linear both;
+}
+
+@mixin tada{
+    
+    @-webkit-keyframes tada {
+        0% { 
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        5%,10% {
+            -webkit-transform: scale(0.9) rotate(-3deg);
+            transform: scale(0.9) rotate(-3deg);
+        }
+        15%,25%,35%,45% {
+            -webkit-transform: scale(1.1) rotate(3deg);
+            transform: scale(1.1) rotate(3deg);
+        }
+        20%,30%,40% {
+            -webkit-transform: scale(1.1) rotate(-3deg);
+            transform: scale(1.1) rotate(-3deg);
+        }
+        50% {
+            -webkit-transform: scale(1) rotate(0);
+           transform: scale(1) rotate(0);
+        }
+    }
+}
+
+
+%ani-shake {
+   -webkit-animation: swing 1.4s ease-out infinite;
+}
+
+@mixin swing{  
+    @-webkit-keyframes swing {
+      20% {
+        -webkit-transform: rotate(15deg);
+      }
+      40% {
+        -webkit-transform: rotate(-10deg);
+      }
+      60% {
+        -webkit-transform: rotate(5deg);
+      }
+      80% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+      }
+      100% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+    }
+}
+
+
+%ani-bounceInDown {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-name: bounceInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: bounceInDown;
+}
+
+@mixin bounceInDown{
+    
+    @-webkit-keyframes bounceInDown {
+      from, 60%, 75%, 90%, 100% {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+    
+      0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -3000px, 0);
+        transform: translate3d(0, -3000px, 0);
+      }
+    
+      60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 25px, 0);
+        transform: translate3d(0, 25px, 0);
+      }
+    
+      75% {
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0);
+      }
+    
+      90% {
+        -webkit-transform: translate3d(0, 5px, 0);
+        transform: translate3d(0, 5px, 0);
+      }
+    
+      100% { 
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+
+}
+
+
+%ani-xj{
+   -webkit-animation: xj 0.8s ease-out;
+}
+
+@mixin xj{
+    @-webkit-keyframes xj{
+        0%{
+            -webkit-transform:rotate(0);
+        }
+        100%{
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}
+
+
+
+
+

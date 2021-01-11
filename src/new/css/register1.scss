@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@import '../../../includ/scss/_config';
+@import '../../../includ/scss/_reset';
+
+
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color: #fff;}
+input:-moz-placeholder,textarea:-moz-placeholder{color: #fff;}
+input::-moz-placeholder,textarea::-moz-placeholder{color: #fff;}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{color: #fff;}
+
+.section1{
+	padding-left: q(55);
+	padding-right: q(55);
+	height: q(2660);
+	color: #fff;
+	background: url(../img/register1_bg.jpg) center top no-repeat;
+	background-size: 100% auto;
+	input{
+		margin-bottom: q(25);
+		padding: q(26) q(25);
+		width: 100%;
+		line-height: q(34);
+		color: #fff;
+		border: 1px solid #e8e8e8;
+		font-size: q(30);
+		background-color: rgba(255,255,255, 0.4);
+		border-radius: q(8);
+	}
+}
+
+.input1{
+	padding-top: q(640);
+}
+
+.reg-msg{
+	position: relative;
+}
+.reg-valid{
+	position: relative;
+	border-top-right-radius: q(8);
+	border-bottom-right-radius: q(8);
+	img{
+		position: absolute;
+		display: block;
+		top: 0;
+		right: 0;
+		width: q(260);
+		height: q(90);
+		border-top-right-radius: q(8);
+		border-bottom-right-radius: q(8);
+	}
+}
+
+.reg-send{
+	position: absolute;
+	top: q(30);
+	right: q(25);
+	font-size: q(28);
+	color: #fff;
+}
+.touchSwiper {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .swiperUl {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: top 0.3s
+    }
+.reg-btn{
+	margin: 0 auto;
+	width: q(460);
+	height: q(95);
+	background-color: #606fd8;
+	border-radius: q(8);
+	a{
+		display: block;
+		width: 100%;
+		height: q(87);
+		line-height: q(87);
+		text-align: center;
+		font-size: q(38);
+		color: #fff;
+		background-color: #6f81f9;
+		border-radius: q(8);
+	}
+}
+
+.reg-cb{
+	font-size: q(23);
+	line-height: q(50);
+	text-align: center;
+	p:nth-of-type(1){
+		padding-top: q(10);
+	}
+	a{
+		font-weight: bold;
+		font-size: q(28);
+		color: #fff;
+	}
+	.reg-down{
+		font-size: q(32);
+		background: url(../img/register1_arrow.png) q(400) center no-repeat;
+		background-size: q(22) q(24);
+
+	}
+}
+

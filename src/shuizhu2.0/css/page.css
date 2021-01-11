@@ -1,0 +1,21 @@
+.page_switch{color:#999;padding:5px 0px 5px 0px;font-size:16px;text-align: center;display:inline-block;}
+.page_switch:after{content: "";display: block;clear:both}
+.page_wrap span{height:35px;float:left;line-height: 35px;display:inline-block;padding:0 10px;margin-right:10px;background-color:#fff;color:#909090;cursor: pointer;border:1px solid #e5e4e2}
+.page_wrap span.disabled{pointer-events: none;background-color:#e5e4e2;color:#fff}
+.page_switch ul{display: inline-block}
+.page_switch .page_wrap{display: inline-block;float:left}
+.page_switch .page_wrap:after{content: "";display: block;clear:both}
+.page_wrap ul{overflow: hidden;float:left}
+.page_wrap li{display:inline-block;width:37px;line-height: 35px;height:35px;margin-right:10px;background:#fff;color:#909090;cursor: pointer;border:1px solid #e5e4e2;float:left}
+.page_wrap li.page_no{cursor: auto;border:1px solid #fff}
+.page_wrap li.on{border:1px solid #48d7dc;color:#48d7dc;}
+.page_wrap li:hover{border-color:#48d7dc;color:#48d7dc;}
+.page_wrap li.page_no:hover{color:inherit;border-color:#fff;}
+.page_gopage{display:inline-block;height:37px;margin-right:10px;background-color:#fff;color:#909090;cursor: pointer;border:1px solid #e5e4e2;width:50px}
+.page_gopage i{display:inline-block;font-style: normal;}
+.page_switch_btn_go_input{height:35px;line-height:35px;color:#464646;text-align:center;border:1px solid #e5e2e4;outline:none;width:50px}
+.page_switch .goPageBox{color:#464646;font-size:14px;height:37px;float: left;background-color: #fff;}
+.page_change{float: left;zoom:1;position: relative;z-index: 2;}
+.page_wrap .page_all{font-size:12px;height: 35px; float: left; line-height: 35px; display: inline-block; padding: 0 10px; margin-right: 10px;}
+ .page_switch .queding{z-index: -1; position: absolute; left:50%; top:0; width: 50px; height:33px; border: 0px; overflow: hidden; font-size: 14px; text-align: center; cursor: pointer; background-color: #fb820c; color: #FFF; margin-left:10px; float: left; outline: none; }
+.wrap{background-color: #f0f0f0; } 

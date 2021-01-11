@@ -1,0 +1,183 @@
+<ul class="header_tab relative">
+    <li class="active">充值中心</li>
+    <li>充值记录</li>
+</ul>
+<div class="active">
+    <div class="wenxin m_t30 font-12">
+        <p class="font-w-b font-14">温馨提示</p>
+        <p class="m_t15">1.单笔充值金额必须大于0，如果有小数点请保留两位；</p>
+        <p class="">2.为遵守国家反洗钱和套现行为的相关法律规定:充值后的所有资金不投标须等 15天 后才能提现；</p>
+        <p class="">3.不支持信用卡充值，建议使用IE8及以上浏览器进行充值。</p>
+    </div>
+    <div class="m_t90">
+        <ul class="bank_ico clearfix">
+            <li class="active"><img src="img/bank1.jpg" /></li>
+            <li><img src="img/bank2.jpg" /></li>
+            <li><img src="img/bank3.jpg" /></li>
+            <li><img src="img/bank4.jpg" /></li>
+            <li><img src="img/bank5.jpg" /></li>
+            <li><img src="img/bank6.jpg" /></li>
+            <li><img src="img/bank7.jpg" /></li>
+            <li><img src="img/bank8.jpg" /></li>
+            <li><img src="img/bank9.jpg" /></li>
+            <li><img src="img/bank10.jpg" /></li>
+            <li><img src="img/bank11.jpg" /></li>
+            <li class="bank_more">更多银行</li>
+        </ul>
+        <p class="m_t40 jine">
+            <span>充值金额</span>
+            <input type="text" placeholder="请输入充值金额"><span class="font-14 font-qian">&nbsp;&nbsp;金额必须大于0，如果有小数点请保留两位</span>
+        </p>
+        <p class="m_t40 chongzhi_">
+            <button type="button" class="btn">充 值</button>
+        </p>
+    </div>
+</div>
+<div class="">
+    <div class="wenxin m_t30 font-12">
+        <p class="font-w-b font-14">温馨提示</p>
+        <p class="m_t15">尊敬的水珠钱包会员，以下是您在水珠钱包个人帐户的充值记录，敬请审阅！</p>
+        <p class="">截止 2016/11/25 16:07:33 您的充值成功金额是： <span class="font-hong">￥0.00</span>，充值失败金额是： <span class="font-hong">￥0.00。</span></p>
+    </div>
+    <div class="table_form m_t30 clearfix">
+        <div class="table">
+            <span class="">类型：</span>
+            <div class="select_div">
+                <span><span>全部</span><em><img src="img/sanjiao.png" /></em></span>
+                <div>
+                    <ul>
+                        <li title="12323232323">12323232323</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>3</li>
+                        <li>3</li>
+                        <li>3</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="table">
+            <span>状态：</span>
+            <div class="select_div">
+                <span><span>全部</span><em><img src="img/sanjiao.png" /></em></span>
+                <div>
+                    <ul>
+                        <li title="12323232323">123232323</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>3</li>
+                        <li>3</li>
+                        <li>3</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="m_l20 table">
+            <span>时间：</span>
+            <div class="time_div">
+                <span><em><img src="img/rili.png" /></em></span>
+            </div>
+        </div>
+        <div class="table">
+            <span>&nbsp;至&nbsp;</span>
+            <div class="time_div">
+                <span><em><img src="img/rili.png" /></em></span>
+            </div>
+        </div>
+        <button class="fl chaxun m_l30" type="button">查询记录</button>
+    </div>
+    <table class="chongzhi_table m_t25 myTable">
+          <thead>
+                <tr class="t2">
+                    <td width="100">充值时间</td>
+                    <td width="100">充值金额</td>
+                    <td width="100">充值状态</td>
+                </tr>
+          </thead>
+          <tbody>
+                  <tr class="t1">
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                  </tr>
+                  <tr class="t2">
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                  </tr>
+          </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+$(function() {
+    $(".chongzhi .header_tab li").on("click", function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        $(".chongzhi>div").eq($(this).index()).addClass("active").siblings().removeClass("active");
+    });
+    $(".bank_ico li").on("click", function() {
+      if(!($(this).hasClass("bank_more"))){
+        $(this).addClass('active').siblings().removeClass('active');
+      }
+    });
+    selectDiv();
+});
+function selectDiv() {//select 模拟
+     function a(e){
+        e.stopPropagation();
+                 if($(e.target).parents(".select_div").size()==0){
+                    $(".select_div div").removeClass("active")
+                    $(document).off("click",a);
+                 } 
+          }
+    $(".select_div>span").on("click", function() {
+        var n = $(this).siblings();
+        $(document).off("click",a);
+        if (n.hasClass("active")) {
+            n.removeClass("active");
+        } else {
+            $(".select_div>span").not(this).siblings().removeClass("active")
+            n.addClass("active");
+            $(document).on("click",a);
+        }
+    });
+    $(".select_div ul li").on("click", function() {
+ $(document).off("click",a);
+        var n = $(this).parents(".select_div");
+        n.find("span>span").text($(this).text());
+        n.find("div").removeClass("active");
+    });
+    $(".select_div>div ul").each(function(i, n) {
+        function mouseWheel(ob, fn) {
+            var a = ob;
+            var b = fn
+            function getData(event) {
+                var data = 0;
+                if (!event) event = window.event;
+                event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+                if (event.wheelDelta) {
+                    data = event.wheelDelta / 150;
+                    if (window.opera) delta = -data;
+                } else if (event.detail) {
+                    data = -event.detail / 3;
+                }
+                b(data);
+            }
+            if (window.addEventListener)
+                a.addEventListener('DOMMouseScroll', getData, false);
+            a.onmousewheel = getData;
+        }
+        mouseWheel(n, function(data) {
+            var top = Number($(n).css('top').replace("px", ""));
+            top += (data * 10);
+            if (top >= 0) {
+                top = 0;
+            } else if (top <= ($(n).parent().height() - $(n).height())) {
+                top = $(n).parent().height() - $(n).height();
+            }
+            $(n).css("top", top);
+        })
+    });
+}
+</script>

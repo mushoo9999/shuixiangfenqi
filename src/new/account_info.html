@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/bgpos.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/login.js"></script>
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="css/loading.css">
+    <script src="js/main.js" type="text/javascript"></script>
+    <title>账户信息</title>
+</head>
+
+<body class="account-body">
+	<input type="hidden" id="borrowerName"/>
+	<input type="hidden" id="phoneId"/>
+    <div class="section">
+        <div class="account">
+            <div class="avatar">
+                <img src="img/avatar.png" alt="头像">
+            </div>
+            <p>WaterElephant</p>
+            <div class="accout-info">
+                借款额度<span>0.0元</span>
+            </div>
+        </div>
+        <div class="account-list1">
+            <div class="listItem">
+                我的银行卡
+            </div>
+            <div class="listItem">
+                我的借款
+            </div>
+            <div class="listItem">
+                账户安全
+            </div>
+        </div>
+        <!--<div class="account-list2">
+            <div class="listItem">
+                分享
+            </div>
+        </div>-->
+        <div class="work-time">
+            *人工客服工作时间：每天9:00-22:00
+        </div>
+        <div class="version">
+            当前版本<span>V1.0.2</span>
+        </div>
+    </div>
+    <div class="nav">
+    	<ul>
+    		<li onclick="javascript:location.href='index.html'">主页</li>
+    		<li onclick="javascript:location.href='RZshouye.html'">认证</li>
+    		<li onclick="javascript:location.href='help.html'">帮助</li>
+    		<li class="active">个人</li>
+    	</ul>
+    </div>
+    <script> 
+		 var bwId=getUUID();
+		 var loginToken=getLoginToken();
+		$(function(){
+    		 $('.nav li').click(function(){
+    			$(this).addClass('active').siblings().removeClass('active');
+    		 });
+			 $.post('/beadwalletloanapp/app/my/appCheckLogin/findBwBorrowerByBwId.do',{"loginToken":loginToken,"bwId":bwId},function(data, status, xhr){
+				if(data.code=='000'){
+					var result=data.result;
+					if(result){
+						$("#borrowerName").val(result.name);
+						var phonne=result.phone;
+						if(phonne){
+							phonne=phonne.substring(0,3)+"****"+phonne.substring(7,11);
+							$(".account p").html(phonne);
+							$("#phoneId").val(result.phone);
+						}
+						$.post('/beadwalletloanapp/app/my/appCheckLogin/findBwOrderByBwId.do',{"loginToken":loginToken,"bwId":bwId},function(object){
+							var bwOrder=object.result;
+							if(object.code=='000'){
+								if(bwOrder){
+									var statusId=bwOrder.statusId;
+									if(statusId==2||statusId==3||statusId==6||statusId==7||statusId==8){
+									}else if(statusId==4||statusId==5||statusId==9||statusId==11||statusId==12||statusId==13||statusId==14){
+										$(".accout-info span").html(toAmount(bwOrder.borrowAmount)+"元");
+									}
+								}
+							}
+						});
+					}
+				}else if(data.code=='-1111'){
+					window.location.href="login.html";
+				}else{
+				  alert(data.msg);
+				  return false;
+				}
+			});	
+			//我的银行卡
+			$(".account-list1 div").eq(0).on("click",function(){
+				 //bwId;
+				 $.post('/beadwalletloanapp/app/my/appCheckLogin/checkBankCardSignByBwId.do',{"loginToken":loginToken,"bwId":bwId},function(data){
+					if(data.code=='000'){
+						if(data.result){
+							var borrowerName=$("#borrowerName").val();
+							var uri=encodeURI("bankcard.html?bwId="+bwId+"&loginToken="+loginToken+"&borrowerName="+borrowerName);
+							window.location.href=uri;
+						}else{
+							window.location.href="bankcard_none.html";
+						}
+					}else{
+						alert(data.msg);
+						return false;
+					}
+				});	
+			});
+			//我的借款
+			$(".account-list1 div").eq(1).on("click",function(){
+				$.post('/beadwalletloanapp/app/my/appCheckLogin/findBwBorrowerRecordByBwId.do',{"bwId":bwId,"loginToken":loginToken}, function(data){
+					if(data.code=='000'){
+						if(data.result){
+							var rows=data.result.rows;
+							if(rows && rows.length>0){
+								window.location.href="loan.html?bwId="+bwId+"&loginToken="+loginToken;
+							}else{
+								window.location.href="loan_none.html";
+							}
+						}else{
+							window.location.href="loan_none.html";
+						}
+					}else{
+						alert(data.msg);
+						return false;
+					}
+				})
+			});
+			//安全账户
+			$(".account-list1 div").eq(2).on("click",function(){
+				var phone=$("#phoneId").val();
+				window.location.href="change-password.html?phone="+phone;
+			});
+		});
+    </script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+</body>
+
+</html>

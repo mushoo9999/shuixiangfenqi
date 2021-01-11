@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="css/loading.css">
+    <script src="js/main.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/common.js"></script>
+	<title>我的借款</title>
+</head>
+<body class="review-body">
+	<div class="gap"></div>
+	<div class="review-state">
+		<h3>借款金额（元）</h3>
+		<p class="review-num">0.00</p>
+		<div class="review-icon">审核中</div>
+	</div>
+
+	<div class="review-detail">
+		<h3>借款明细</h3>
+		<div class="review-date">
+			<p>借款期限<span>暂无</span></p>
+			<p>还款方式<span>暂无</span></p>
+		</div>
+	</div>
+	<script>
+	$(function(){
+			var orderId=getParameter("orderId");
+			var loginToken=getLoginToken();
+			$.post('/beadwalletloanapp/app/my/appCheckLogin/findBwOrderByOrderId.do',{"loginToken":loginToken,"orderId":orderId},function(data){
+					if(data.code=='000'){
+						var bwOrder=data.result;
+						if(bwOrder){
+							//$(".review-num").html(toAmount(bwOrder.borrowAmount));
+							var statusName=getStatusName(bwOrder.statusId);
+							$(".review-icon").html(statusName);
+							if(bwOrder.repayTerm!=null&&bwOrder.repayTerm!=''){
+								$(".review-date p").eq(0).find("span").html(bwOrder.repayTerm+"个月");
+							}
+							if(bwOrder.repayType!=null&&bwOrder.repayType!=''){
+								$(".review-date p").eq(1).find("span").html(bwOrder.repayType==1?'先息后本':'等额本息');
+							}
+						}
+					}else{
+						alert(data.msg);
+						return false;
+					}
+			});
+		});
+	</script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+</body>
+</html>

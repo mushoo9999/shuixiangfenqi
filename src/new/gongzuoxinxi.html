@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/loading.css">
+    <script src="js/flex.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript"></script>  
+	<script src="js/main.js" type="text/javascript"></script>
+	<script src="js/common.js" type="text/javascript"></script>  
+	<script src="js/login.js" type="text/javascript"></script>  
+	<title>工作信息</title>
+</head>
+
+<body>
+    <div class="yunying1 ">
+        <div class="progressbar">
+            <div><span class="progress3"></span>
+                <ul class="circle clearfix">
+                    <li class="active"><span></span></li>
+                    <li class="active"><span></span></li>
+                    <li class=""><span></span></li>
+                    <li><span></span></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="text">
+            <li><span>个人信息</span></li>
+            <li><span>工作信息</span></li>
+            <li><span>运营商信息</span></li>
+            <li><span>在线提交</span></li>
+        </ul>
+    </div>
+    <div class="content">
+		<form id="workForm" method="post">
+			<div class="m_t40 form-group">
+				<title class="font-b font-w-b font-hei text-center">请填写所在单位信息（必填）</title>
+				<p class="text-center font-hei font-b m_t40 font-w-b">
+				   <input type="text" placeholder="请输入所在的单位" id="comName" name="comName" class="noNull" notNull="单位名称不能为空"/>
+				</p>
+				<p class="text-center font-hei font-b m_t40 font-w-b">
+					<select id="workYears" name="workYears" class="noNull" notNull="工作年限不能为空">
+						<option value="">工作年限/工龄</option>
+						<option value="一年以内">一年以内</option>
+						<option value="1-3年">1-3年</option>
+						<option value="3-5年">3-5年</option>
+						<option value="5-10年">5-10年</option>
+					</select>
+					<i></i>
+				</p>
+				<p class="text-center font-hei font-b m_t40 font-w-b">
+					<select  id="callTime" name="callTime" class="noNull" notNull="接电话时间不能为空">
+						<option value="">请选择方便接电话的时间</option>
+						<option value="8:00 - 10:00">8:00 - 10:00</option>
+						<option value="10:00 - 12:00">10:00 - 12:00</option>
+						<option value="12:00 - 14:00">12:00 - 14:00</option>
+						<option value="14:00 - 16:00">14:00 - 16:00</option>
+						<option value="16:00 - 18:00">16:00 - 18:00</option>
+					</select>
+					<i></i>
+				</p>
+				<!--历史工作信息 -->
+				<input type="hidden" id="hisWId" name="hisWId"/>
+			</div>
+			<div class="m_t40 form-group">
+				<title class="font-b font-w-b font-hei text-center">请填写您的银行卡信息(必填)</title>
+				<p class="text-center font-hei font-b m_t40 font-w-b clearfix">
+					<span class="half fl">
+					<select id="provinceCode" name="provinceCode" onchange="changeCity()" class="noNull" notNull="开户行省份不能为空">
+						<option value="">选择开户行省份</option>
+					</select>
+					<i></i></span>
+					<span class="half fr">
+					<select id="cityCode" name="cityCode" class="noNull" notNull="开户城市不能为空">
+						<option value="">选择开户城市</option>
+					</select>
+					<i></i></span>
+				</p>
+				<p class="text-center font-hei font-b m_t40 font-w-b">
+					<select id="bankCode" name="bankCode" class="noNull" notNull="开户行不能为空">
+						<option value="">选择开户行</option>
+					</select>
+					<i></i>
+				</p>
+				<p class="text-center font-hei font-b m_t40 font-w-b">
+					<input type="text" placeholder="请输入您的工资卡号" id="cardNo" name="cardNo" class="noNull" notNull="工资卡号不能为空"/>
+				</p>
+				<p class="text-center font-hui font-sm m_t40 must">
+					为了确保申请成功，请输入您所在单位的工资卡号。
+				</p>
+				<!--历史银行卡 -->
+				<input type="hidden" id="hisBCId" name="hisBCId"/>
+			</div>
+			<div class="m_t40 form-group">
+				<title class="font-b font-w-b font-hei text-center">社保信息(选填)</title>
+				<p class="text-center font-hei font-b m_t40 font-w-b clearfix">
+					<select id="cityId" name="cityId"  class="noChildNull" notNull="社保所在城市不能为空" onchange="identifyingCode()">
+						<option value="">社保所在城市</option>
+					</select>
+					<i></i>
+				</p>
+				<p class="text-center font-hei font-b m_t40 font-w-b">
+					<input type="text" placeholder="请输入社保帐号" id="account" name="account" class="noChildNull" notNull="社保帐号不能为空"/>
+				</p>
+				<p class="text-center font-hei font-b m_t40 font-w-b">
+					<input type="text" placeholder="请输入社保密码（初始密码为身份证后6位）" id="password" name="password" class="noChildNull" notNull="社保密码不能为空"/>
+				</p>
+				<p class="text-center font-hei font-b m_t40 font-w-b passcode">
+					<input type="text" placeholder="请输入验证码" id="picCode"  name="picCode" class="noChildNull" notNull="验证码不能为空"/>
+					<em>
+						<img id="picCodeImg"/>
+					</em>
+				</p>
+				<!--城市规则ID-->
+				<input type="hidden" id="ruleId" name="ruleId"/>
+				<p class="text-center font-hei font-b m_t40 font-w-b clearfix">
+					<span class="fl text-left font-sm font-hui">  认证成功可以获得更高的额度哦！</span>
+					<a id="forgetPass" class="fr" style="cursor: pointer;" class="fr font-sm">忘记社保密码？</a>
+				</p>
+				<p class="text-center font-hei font-sm m_t40 ">
+					<span class="fl font-m font-hui"><input id="agreeCheck" type="checkbox" checked="checked">已阅读并同意<a href="javascript:void(0)" onclick="tanchuang('https://www.beadwallet.com/app/loanh5/fuyou_we.html')">《富友-水象金账户》账户协议</a></span>
+				</p>
+				<!-- 历史社保卡 -->
+				<input type="hidden" id="hisIAId" name="hisIAId"/>
+				<!-- 是否需要验证社保 -->
+				<input type="hidden" id="checkInsure" name="checkInsure" value="0"/>
+			</div>
+				<!--工单ID-->
+				<input type="hidden" id="orderId" name="orderId"/>
+				
+				<!--loginToken-->
+				<input type="hidden" id="loginToken" name="loginToken"/>
+				
+				<!--bwID-->
+				<input type="hidden" id="bId" name="bId"/>
+			
+				<!--bwID-->
+				<input type="hidden" id="bwId" name="bwId"/>
+			
+			<!--channel-->
+			<input type="hidden" id="channel" name="channel" value="4"/>
+			<button type="button" class="btn disable font-bai m_t40" disabled="disabled" id="subForm" onclick="subButton()" style="cursor: pointer;">下一步</button>
+		</form>
+	</div>
+</body>
+
+</html>
+<script type="text/javascript">
+$(function() {
+	//是否结束
+	isEnd("subForm");
+
+    $("select").change(function() {
+        if ($(this).val() !== $(this).find("option").html()) {
+            $(this).addClass("font-hei");
+        } else {
+            $(this).removeClass("font-hei");
+        }
+    });
+	
+	//初始化
+	initData();
+	
+	//忘记密码
+	$("#forgetPass").click(function(){
+		window.location.href = "shebaomima.html";
+	});
+	
+	
+})
+	
+	//初始化数据
+	function initData(){
+		
+		var loginToken  =  getLoginToken();
+		var bwId = getUUID();
+		$("#loginToken").val(loginToken);
+		$("#bwId").val(bwId);
+		$("#bId").val(bwId);
+		
+		
+		//创建订单号
+		var OrderId = getParameter("OrderId");
+		if(OrderId>0){
+			$("#orderId").val(OrderId);
+		}else{
+			createOrderId();		
+		}
+		
+		
+		//获取银行
+		$.ajax({
+			type : "post",
+			url : "/beadwalletloanapp/app/fuiou/queryBank.do",
+			dataType : "json",
+			async: false,
+			success : function(obj) {	
+				var status  = obj.code;
+				if(status=="000"){
+					var data =  obj.result;
+					//清空
+					$("#bankCode").empty();
+					$("#bankCode").append("<option value=''>选择开户银行</option>");
+					var options = [];
+					if(data !=null){
+						$.each(data, function(name, value) {
+							options.push("<option value='" + name + "'> " + value + " </option>");
+						});
+						$("#bankCode").append(options.join(''));  
+					}
+				}
+			}
+		});
+		
+		
+		//获取省份
+		$.ajax({
+			type : "post",
+			url : "/beadwalletloanapp/app/fuiou/queryProvince.do",
+			dataType : "json",
+			async: false,
+			success : function(obj) {	
+				var status  = obj.code;
+					if(status=="000"){
+						var data =  obj.result;
+						//清空
+						$("#provinceCode").empty();
+						$("#provinceCode").append("<option value=''>选择开户省份</option>");
+						var options = [];
+						if(data !=null){
+							$.each(data, function(name, value) {
+								options.push("<option value='" + name + "'> " + value + " </option>");
+							});
+							$("#provinceCode").append(options.join(''));  
+							//初始化赋值
+							changeCity();
+						}
+					}
+			}
+		});
+		
+		//社保城市 cityId
+		socialCity("cityId");
+							
+		
+		var orderId = $("#orderId").val();
+		if(parseInt(orderId) > 0){  
+			//初始化赋值
+			$.ajax({
+				type : "post",
+				url : "/beadwalletloanapp/app/infoVerify/appCheckLogin/findWorkInfo.do",
+				dataType : "json",
+				async: false,
+				data:{"loginToken":loginToken,"bwId":bwId,"orderId":$("#orderId").val()},
+				success : function(obj) {	
+					var status = obj.code;
+					if(status == "000"){
+						var result = obj.result;
+						if(result!=null){
+							//工作认证信息
+							var bwi = result.bwi;
+							if(bwi!=null){
+								//单位名称
+								$("#comName").val(bwi.comName);
+								//工作年限/工龄
+								$("#workYears").val(bwi.workYears);
+								//接电话时间
+								$("#callTime").val(bwi.callTime);
+								//工作ID
+								$("#hisWId").val(bwi.id);
+							}
+							
+							
+							//银行卡认证信息
+							var bbc = result.bbc;
+							if(bbc!=null){
+								//省份
+								$("#provinceCode").val(bbc.provinceCode);
+								if(bbc.provinceCode!=null && bbc.provinceCode!=""){
+									setReadOnly("provinceCode");
+								}
+								//开户城市
+								changeCity();
+								$("#cityCode").val(bbc.cityCode);
+								if(bbc.cityCode!=null && bbc.cityCode!=""){
+									setReadOnly("cityCode");
+								}
+								//开户行bankCode
+								$("#bankCode").val(bbc.bankCode);
+								if(bbc.bankCode!=null && bbc.bankCode!=""){
+									setReadOnly("bankCode");
+								}
+								//工资卡号
+								$("#cardNo").val(bbc.cardNo);
+								if(bbc.cardNo!=null && bbc.cardNo!=""){
+									setReadOnly("cardNo");
+								}
+								//银行卡认证ID
+								$("#hisBCId").val(bbc.id);
+							}
+						
+								
+							
+							//bia（社保认证信息）
+							var bia = result.bia;
+							if(bia!=null){
+								$("#cityId").val(bia.cityCode);
+								//社保账号 account
+								$("#account").val(bia.account);
+								//社保密码 passwor
+								$("#password").val(bia.password);
+								//历史社保ID hisIAId
+								$("#hisIAId").val(bia.id);
+								//初始化防止验证码为空
+								identifyingCode();
+							}
+						
+							//勾选
+							$("#agreeCheck").attr("checked", true);
+						}
+					}
+				}
+			});
+		}
+		
+	}
+
+	
+	//提交表单
+	function subButton(){
+		var status='true';		
+			//选填
+			var child_status = 'true';
+			$(".noNull").each(function(){
+					var name = $(this).attr("name");
+					if($(this).val()==""){
+							alert($(this).attr('notNull'));
+							status='false';
+							return false;
+					}
+			 })
+			
+			//社保信息特殊类
+			 $(".noChildNull").each(function(){
+					var name = $(this).attr("name");
+					if($(this).val()!=""){
+							//社保需要验证
+							$("#checkInsure").val("1");
+							return false;
+					}
+			 })
+			 
+			 
+			//社保信息特殊类
+			 if($("#checkInsure").val()=='1'){
+				$(".noChildNull").each(function(){
+					var name = $(this).attr("name");
+					if($(this).val()==""){
+							alert($(this).attr('notNull'));
+							child_status='false';
+							return false;
+					}
+				})
+			 }
+			
+			 
+			 //是否选中
+			var hasChk = $('#agreeCheck').is(':checked');
+			if(!hasChk && status=='true' &&  child_status == 'true'){
+				alert("请选中对应的阅读事项");
+				status='false';
+				return false;
+			}
+			
+			 if(status=='true' && child_status == 'true'){
+					//删除掉所有的锁定状态
+					//省份
+					removeReadOnly("provinceCode");			
+					//开户城市
+					removeReadOnly("cityCode");	
+					//开户行bankCode
+					removeReadOnly("bankCode");	
+					//工资卡号
+					removeReadOnly("cardNo");	
+					//发送ajax
+					$.ajax({
+						type : "post",
+						url : "/beadwalletloanapp/app/infoVerify/appCheckLogin/saveOrUpdateWorkInfo.do",
+						dataType : "json",
+						async: false,
+						data : $('#workForm').serialize(),
+						success : function(obj) {	
+							if(obj.code=="000"){
+								window.location.href =  "yunyingshang.html?orderId="+$("#orderId").val()+"&realName="+getParameter("realName");;
+							}else{
+								alert(obj.msg); 
+								window.location.reload();
+							}
+						}
+					});
+			}
+	}
+	
+	
+	//获取省份
+	function initProvince(){
+		//获取省份
+		$.ajax({
+			type : "post",
+			url : "/beadwalletloanapp/app/fuiou/queryProvince.do",
+			dataType : "json",
+			async: false,
+			success : function(obj) {	
+				var status  = obj.code;
+					if(status=="000"){
+						var data =  obj.result;
+						//清空
+						$("#provinceCode").empty();
+						var options = [];
+						if(data !=null){
+							$.each(data, function(name, value) {
+								options.push("<option value='" + name + "'> " + value + " </option>");
+							});
+							$("#provinceCode").append(options.join(''));  
+							//初始化赋值
+							changeCity();
+						}
+					}
+			}
+		});
+	}
+	
+	//修改城市
+	function changeCity(){
+		//获取省份的ID
+		var provinceCode = $("#provinceCode").val();
+		//发送ajax
+		$.ajax({
+			type : "post",
+			url : "/beadwalletloanapp/app/fuiou/queryCity.do",
+			dataType : "json",
+			async: false,
+			data : {"provinceId":provinceCode},
+			success : function(obj) {	
+				var status  = obj.code;
+				if(status=="000"){
+					var data =  obj.result;
+					//清空
+					$("#cityCode").empty();
+					$("#cityCode").append("<option value=''>选择开户城市</option>");
+					var options = [];
+					if(data !=null){
+						$.each(data,function(index,item){ 
+							options.push("<option value='" + item.code + "'> " +  item.cityName + " </option>");
+						});
+						$("#cityCode").append(options.join(''));  
+					}
+				}
+			}
+		});
+	}
+	
+	
+	//社保城市
+	function socialCity(divId){
+		//发送ajax
+		$.ajax({
+			type : "post",
+			url : "/beadwalletloanapp/app/insure/appCheckLogin/getCitys.do",
+			dataType : "json",
+			data:{"loginToken":loginToken},
+			async: false,
+			success : function(obj) {	
+				var status  = obj.code;
+				if(status=="000"){
+					var data =  obj.result;
+					//清空
+					$("#"+divId).empty();
+					$("#"+divId).append("<option value=''>选择社保城市</option>");
+					var options = [];
+					if(data !=null){
+						$.each(data,function(index,item){ 
+							options.push("<option value='" + item.insureCode + "'> " +  item.name + " </option>");
+						});
+						$("#"+divId).append(options.join(''));  
+					}
+				}
+			}
+		});
+	}
+	
+	
+	//社保验证码
+	function identifyingCode(){
+		var cityId = $("#cityId").val();
+		//发送ajax
+		$.ajax({
+			type : "post",
+			url : "/beadwalletloanapp/app/insure/appCheckLogin/getPicCode.do",
+			dataType : "json",
+			data:{'cityId':cityId,'userId':$("#bwId").val(),'loginToken':loginToken},
+			async: false,
+			success : function(obj) {	
+				var status  = obj.code;
+				if(status=="000"){
+					var picCod = obj.result.picCode.pic_code;
+					if(picCod!=null){
+						$("#picCodeImg").attr("src","data:image/jpeg;base64,"+picCod);
+						$("#ruleId").val(obj.result.ruleId);
+					}
+				}else{
+						$("#picCodeImg").attr("src","");
+				}
+			}
+		});
+	}
+	
+	//生成工单
+	function  createOrderId(){
+		//发送ajax
+		$.ajax({
+					url : "/beadwalletloanapp/app/my/appCheckLogin/generateBwOrderForAuth.do",
+					type : 'post',
+					dataType : 'json',
+					async : false,
+					data : $('#workForm').serialize(),
+					success : function(obj) {
+						$("#orderId").val(obj.result);
+					}
+				});
+	}
+	//特殊只读属性
+	function setReadOnly(id){
+	   $("#"+id).attr("disabled","disabled");	
+	}
+	
+	//特殊只读属性
+	function removeReadOnly(id){
+	   $("#"+id).removeAttr('disabled');
+	}
+</script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>

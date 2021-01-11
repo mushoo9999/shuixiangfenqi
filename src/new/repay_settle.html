@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="css/loading.css">
+    <script src="js/main.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/bgpos.js"></script>
+	<script src="js/common.js"></script>
+    <title>已结清</title>
+</head>
+
+<body class="settle-body">
+    <div class="container">
+        <div class="gap"></div>
+        <div class="repay-state settle-state">
+            <h3>已结清本金（元）</h3>
+            <p class="repay-num"></p>
+            <div class="repay-info settle-info">
+                <p>良好的还款习惯，是您信誉的保证!</p>
+            </div>
+        </div>
+        <div class="gap"></div>
+        <div class="settle-detail">
+            <h3>借款明细</h3>
+            <div id="borrowId" class="settle-date">
+                <p>借款金额<span></span></p>
+                <p>借款期限<span>暂无</span></p>
+                <p>还款方式<span>暂无</span></p>
+            </div>
+        </div>
+        <div class="gap"></div>
+        <div class="settle-detail">
+            <h3>还款明细</h3>
+            <div id="repayId" class="settle-date">
+                <p>已还本金<span></span></p>
+                <p>已还利息<span></span></p>
+            </div>
+        </div>
+    </div>
+	<script>
+		var orderId=getParameter("orderId");
+		$(function($){
+			$.post('/beadwalletloanapp/app/my/appCheckLogin/findBwOrderByOrderId.do',{"orderId":orderId,"loginToken":getLoginToken()}, function(data){
+				if(data.code=='000'){
+					var bwOrder=data.result;
+					if(bwOrder){
+						//借款明细
+						$(".repay-num").html(toAmount(bwOrder.borrowAmount));
+						$("#borrowId p").eq(0).find("span").html(toAmount(bwOrder.borrowAmount)+"元");
+						if(bwOrder.repayTerm!=null&&bwOrder.repayTerm!=''){
+							$("#borrowId p").eq(1).find("span").html(bwOrder.repayTerm+"个月");
+						}
+						if(bwOrder.repayType!=null&&bwOrder.repayType!=''){
+							if(bwOrder.repayType==1){
+								$("#borrowId p").eq(2).find("span").html("先息后本");
+							}else{
+								$("#borrowId p").eq(2).find("span").html("等额本息");
+							}
+						}
+						$.post('/beadwalletloanapp/app/repay/appCheckLogin/sumCorpusAndAccrual.do',{"orderId":orderId,"loginToken":getLoginToken()}, function(object){
+							if(object.code=='000'){
+								//还款明细
+								var map=object.result;
+								if(map){
+									$("#repayId p").eq(0).find("span").html(toAmount(map.corpus));
+									$("#repayId p").eq(1).find("span").html(toAmount(map.accrual));
+								}
+							}
+						});
+					}
+				}else{
+					alert(data.msg);
+					return false;
+				}
+			});
+		});
+	</script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>	
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <script src="js/main.js" type="text/javascript"></script>
+    <!-- <script src="js/common.js"></script> -->
+    <title>还款</title>
+</head>
+<body>
+<div class="repay-content repay-normal-content">
+    <div class="repay-money">
+        <p class="repay-info">本次未还本金（元）</p>
+        <p class="repay-num">2,000.00</p>
+    </div>
+    <div class="repay-detail">
+        <p>申请时间：<span>2016年8月12日</span></p>
+        <p>借款期限：<span>1个月</span></p>
+        <p>还款方式：<span>先息后本</span></p>
+        <p>借款进度：<span>还款进行中</span></p>
+        <p>下一还款时间：<span>2016年9月12日 之前</span></p>
+    </div>
+    <div>
+        <a href="javascript:void(0);" class="agreement">查看合同</a>
+    </div>
+    <div class="gap-250"></div>
+    <div class="btn-wrap">
+        <button class="repay-btn">正常还款</button>
+        <button class="repay-btn">提前还款</button>
+    </div>
+
+    <div class="popup popup-hetong">
+            <div class="poup-cover"></div>
+            <div class="popup-detail">
+                <ul>
+                    <li><a href="javascript:void(0);">合同一</a></li>
+                    <li><a href="javascript:void(0);">合同二</a></li>
+                </ul>
+                <button class="hetong-btn">取消</button>
+            </div>
+        </div>
+</div>
+    <div class="history-content" style="display: none;">
+        <div class="none-info">
+            您还没有借款记录
+        </div>
+    </div>
+    <script>
+        $(function(){
+            switchNav();
+            popupShow("agreement", "popup-hetong");
+        });
+        function switchNav(){
+            $('.repay-lis').on('click', function(){
+                $(this).addClass('repay-active').siblings().removeClass('repay-active');
+                if($(this).index() == 0){
+                    $('.repay-content').show();
+                    $('.history-content').hide();
+                }else{
+                    $('.repay-content').hide();
+                    $('.history-content').show();
+                }
+            });
+        }
+
+        function popupShow(cls1, cls2){
+        $("." + cls1).on('touchend', function() {
+            $("." + cls2).show(function(event) {
+                $(this).addClass('popup-show').on("webkitTransitionEnd", function() {
+                    $(this).show();
+                }).on("transitionend", function() {
+                    $(this).show();
+                });
+            });
+        });
+
+        $(".hetong-btn").on("touchend", function(event) {
+            event.stopPropagation();
+            $("." + cls2).removeClass('popup-show').on("webkitTransitionEnd", function() {
+                $(this).hide();
+            }).on("transitionend", function() {
+                $(this).hide();
+            });
+
+        })
+    }
+    </script>
+</body>
+</html>

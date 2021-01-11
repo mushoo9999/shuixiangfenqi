@@ -1,0 +1,113 @@
+<div class="topbar">
+    <div class="clearfix">
+        <ul class="fl">
+            <li class="topbar-sz">
+                <span>水珠钱包App</span>
+                <div class="himg">
+                    <em></em>
+                    <dl>
+                        <dd><img src="img/sz_download.png" width="90" height="90" alt="水珠钱包" /></dd>
+                        <dt>水珠钱包App下载</dt>
+                    </dl>
+                </div>
+            </li>
+            <li class="topbar-sx">
+                <span>水象分期App</span>
+                <div class="himg">
+                    <em></em>
+                    <dl>
+                        <dd><img src="img/sx_download.png" width="90" height="90" alt="水象分期" /></dd>
+                        <dt>水象分期App下载</dt>
+                    </dl>
+                </div>
+            </li>
+            <li class="topbar-wx">
+                <span>微信公众号</span>
+                <div class="himg clearfix">
+                    <em></em>
+                    <dl>
+                        <dd><img src="img/sz_wx.png" width="90" height="90" alt="水珠钱包公众号" /></dd>
+                        <dt>水珠钱包公众号</dt>
+                    </dl>
+                    <dl>
+                        <dd><img src="img/sx_wx.png" width="90" height="90" alt="水象分期公众号" /></dd>
+                        <dt>水象分期公众号</dt>
+                    </dl>
+                </div>
+            </li>
+            <li class="topbar-qq">
+                <span>官方粉丝群</span>
+                <div class="himg">
+                    <em></em>
+                    <dl>
+                        <dd><img src="img/sz_qq.jpg" width="90" height="90" alt="qq官方粉丝群" /></dd>
+                        <dt>官方粉丝群</dt>
+                    </dl>
+                </div>
+            </li>
+        </ul>
+        <ul class="fr">
+            <li><a href="javascript:void(0);">咨询客服</a></li>
+            <li><a href="javascript:void(0);">关于我们</a></li>
+            <li><a href="javascript:void(0);">帮助中心</a></li>
+        </ul>
+    </div>
+</div>
+<div class="navbar clearfix bg_white">
+    <div class="logo">
+        <a href="index.html"></a>
+    </div>
+    <div class="menu">
+        <ul>
+            <li class="active"><a href="index.html">首 页<i></i></a></li>
+            <li><a href="finance.html">我要理财<i></i></a></li>
+            <li><a href="#">新手专区<i></i></a></li>
+            <li><a href="#">安全保障<i></i></a></li>
+            <li>
+                <a href="#" class="menu-account" style="display: none;">我的账户<i></i></a>
+                <div class="index-btns">
+                    <button type="button" name="button" class="login-btn">登录</button>
+                    <button type="button" name="button" class="reg-btn">注册</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+
+    // 顶部二维码
+function showEwm() {
+    $('.topbar .fl li').hover(function() {
+        $(this).find('.himg').show();
+    }, function() {
+        $(this).find('.himg').hide();
+    })
+}
+
+//导航
+function menuLine() {
+    var $index = $('.menu li.active').index();
+    $('.menu li').on('mouseover', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+    $('.menu').on('mouseout', function() {
+        $(this).find('li').eq($index).addClass('active').siblings().removeClass('active');
+    });
+
+    $('.menu li').on('click', function() {
+        $index = $(this).index();
+    });
+}
+$(function(){
+        showEwm();
+        menuLine();
+        $('.login-btn').on('click', function(){
+            window.location.href = "login.html";
+        });
+        $('.reg-btn').on('click', function(){
+            window.location.href = "register.html";
+        });
+    })
+</script>

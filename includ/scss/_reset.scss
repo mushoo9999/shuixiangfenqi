@@ -1,0 +1,30 @@
+
+*{-webkit-box-sizing: border-box;box-sizing: border-box;-webkit-tap-highlight-color: rgba(255,255,255,0);}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin: 0;padding: 0;}
+html,body{font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;line-height: 1;-webkit-user-select: none;user-select: none;-webkit-font-smoothing: antialiased;-webkit-overflow-scrolling: touch;overflow-scrolling: touch;text-rendering: optimizelegibility;}
+table{border-spacing: 0;border-collapse: collapse;}
+a,img{text-decoration: none;-webkit-touch-callout: none;border: 0; outline: none;}
+img{display: inline-block;border-style: none;}
+a:active,a:hover{color: inherit;outline-width: 0;}
+ol,ul,li{list-style: none;}
+input{border: none 0;outline: none;-webkit-appearance: none;}
+i,em{font-style: normal;}
+button,input,optgroup,select,textarea{font-family: 'microsoft yahei', sans-serif;font-size: 100%;line-height: 1.0;margin: 0;}
+::-webkit-file-upload-button{font: inherit;-webkit-appearance: button;}
+[hidden]{display: none;}
+.inline{display: inline;}
+.inline-block{display: inline-block;}
+.block{display: block}
+.text-center{text-align: center;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.fr{float: right;}
+.fl{float: left;}
+.clearfix:after{display: table;clear: both;content: '';}
+.my-placeholder{color: #AAA;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color: #AAA;}
+input:-moz-placeholder,textarea:-moz-placeholder{color: #AAA;}
+input::-moz-placeholder,textarea::-moz-placeholder{color: #AAA;}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{color: #AAA;}
+
+/*我是分割线*/

@@ -1,0 +1,1048 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+  line-height: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  text-rendering: optimizelegibility; }
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+a, img {
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  border: 0;
+  outline: none; }
+
+img {
+  display: inline-block;
+  border-style: none; }
+
+a:active, a:hover {
+  color: inherit;
+  outline-width: 0; }
+
+ol, ul, li {
+  list-style: none; }
+
+input {
+  border: none 0;
+  outline: none;
+  -webkit-appearance: none; }
+
+i, em {
+  font-style: normal; }
+
+button, input, optgroup, select, textarea {
+  font-family: 'microsoft yahei', sans-serif;
+  font-size: 100%;
+  line-height: 1.0;
+  margin: 0; }
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button; }
+
+[hidden] {
+  display: none; }
+
+.inline {
+  display: inline; }
+
+.inline-block {
+  display: inline-block; }
+
+.block {
+  display: block; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.fr {
+  float: right; }
+
+.fl {
+  float: left; }
+
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: ''; }
+
+.my-placeholder {
+  color: #AAA; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #AAA; }
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #AAA; }
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #AAA; }
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #AAA; }
+
+/*我是分割线*/
+.header,
+.banner,
+.footer,
+#header,
+#footer {
+  min-width: 1200px; }
+
+.topbar {
+  background-color: #eee; }
+  .topbar > div {
+    margin: 0 auto;
+    width: 1200px; }
+  .topbar li {
+    float: left;
+    line-height: 40px;
+    font-size: 13px;
+    color: #626262;
+    cursor: pointer; }
+  .topbar .fl li {
+    position: relative;
+    margin-right: 20px;
+    width: 120px; }
+  .topbar .fr li {
+    margin-left: 38px; }
+    .topbar .fr li > a {
+      color: #626262; }
+
+/*顶部*/
+.topbar-sz {
+  background: url(../img/index_top_icon_1.png) 84px center no-repeat; }
+
+.topbar-sx {
+  background: url(../img/index_top_icon_2.png) 84px center no-repeat; }
+
+.topbar-wx {
+  background: url(../img/index_top_icon_3.png) 74px center no-repeat; }
+  .topbar-wx .himg {
+    width: 240px; }
+    .topbar-wx .himg em {
+      right: 150px; }
+  .topbar-wx dl {
+    display: inline-block;
+    margin-left: 10px; }
+
+.topbar-qq {
+  background: url(../img/index_top_icon_4.png) 74px center no-repeat; }
+
+.himg {
+  display: none;
+  position: absolute;
+  z-index: 99999;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ececec; }
+  .himg em {
+    position: absolute;
+    top: -10px;
+    right: 18px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: url(../img/trangle.png) center bottom no-repeat; }
+  .himg dd {
+    text-align: center; }
+  .himg dt {
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.0; }
+
+/*导航栏*/
+.navbar {
+  margin: 0 auto;
+  width: 1200px;
+  height: 100px; }
+
+.logo {
+  float: left;
+  width: 293px;
+  height: 100%;
+  background: url(../img/index_logo.png) left 25px no-repeat; }
+  .logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 0; }
+
+.menu {
+  float: right;
+  height: 100%; }
+  .menu ul {
+    padding-top: 30px; }
+  .menu li {
+    float: left;
+    position: relative;
+    line-height: 70px; }
+    .menu li a {
+      display: block;
+      padding: 0 20px;
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+      color: #313131;
+      outline: none;
+      border: 0; }
+    .menu li.active i {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -40px;
+      width: 79px;
+      height: 6px;
+      background-color: #00dada; }
+
+.menu .login-btn {
+  width: 60px;
+  height: 30px;
+  font-size: 18px;
+  font-family: 'Microsoft Yahei';
+  color: #00dada;
+  background: #fff;
+  border: 1px solid #00dada;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: 0; }
+
+.menu .reg-btn {
+  width: 60px;
+  height: 30px;
+  font-size: 18px;
+  font-family: 'Microsoft Yahei';
+  color: #fff;
+  background: #00dada;
+  border: 1px solid #00dada;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: 0; }
+
+/* footer */
+.footer-top {
+  background: url(../img/foot_bg.png) left top repeat; }
+
+.footer-content {
+  margin: 0 auto;
+  width: 1200px; }
+
+.footer-links {
+  position: relative;
+  padding: 15px 10px;
+  border-bottom: 1px solid #5e4848; }
+  .footer-links dl {
+    overflow: hidden; }
+  .footer-links dt {
+    width: 145px;
+    float: left;
+    font-size: 15px;
+    color: #737373;
+    text-align: right;
+    line-height: 32px; }
+  .footer-links dd {
+    float: left;
+    line-height: 32px; }
+    .footer-links dd a {
+      padding: 0 20px;
+      font-size: 13px;
+      color: #737373; }
+    .footer-links dd i {
+      font-size: 14px;
+      font-weight: normal;
+      color: #737373; }
+
+.footer-arrow {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 15px;
+  right: 85px;
+  cursor: pointer; }
+
+.footer-arrow-down {
+  background: url(../img/foot_arrow_down.png) center center no-repeat; }
+
+.footer-arrow-up {
+  background: url(../img/foot_arrow_up.png) center center no-repeat; }
+
+.links-hide {
+  display: none; }
+
+.footer-nav {
+  display: table;
+  padding: 20px; }
+  .footer-nav dl {
+    display: table-cell;
+    vertical-align: top; }
+  .footer-nav img {
+    width: 96px;
+    height: 96px; }
+
+.footer-nav-list {
+  padding-left: 25px;
+  padding-right: 40px;
+  color: #313131;
+  background: url(../img/foot_nav_bg.png) left 4px no-repeat; }
+  .footer-nav-list dt {
+    padding-bottom: 10px;
+    font-size: 20px; }
+  .footer-nav-list dd {
+    line-height: 32px; }
+  .footer-nav-list a {
+    color: #313131;
+    font-size: 18px; }
+
+.footer-service {
+  padding: 0 20px;
+  font-size: 18px;
+  color: #313131; }
+  .footer-service dd {
+    padding-top: 18px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff7a7b; }
+
+.footer-ewm {
+  overflow: hidden;
+  padding-left: 20px;
+  width: 235px;
+  font-size: 14px;
+  color: #313131; }
+  .footer-ewm dd {
+    padding-top: 10px;
+    width: 96px;
+    text-align: center; }
+  .footer-ewm dt,
+  .footer-ewm dd {
+    display: inline-block; }
+  .footer-ewm .ewm-1 {
+    float: left; }
+  .footer-ewm .ewm-2 {
+    float: right; }
+
+.footer-bottom {
+  padding: 15px 0;
+  background-color: #959595; }
+
+.footer-copyright {
+  margin: 0 auto;
+  width: 1200px;
+  font-size: 15px;
+  text-align: center; }
+  .footer-copyright p {
+    padding: 10px 0; }
+  .footer-copyright a {
+    margin-left: 8px; }
+  .footer-copyright img {
+    vertical-align: top;
+    border: 0;
+    outline: none; }
+
+#kx_verify {
+  width: 96px !important;
+  height: 36px !important; }
+
+#kx_verify img {
+  width: 96px;
+  height: 36px; }
+
+/*banner*/
+.banner {
+  position: relative;
+  height: 460px;
+  width: 100%;
+  overflow: hidden;
+  /* li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 460px;
+    } */ }
+
+.btn-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  background: url(../img/banner_btn_l.png) center center no-repeat;
+  z-index: 10;
+  cursor: pointer; }
+
+.btn-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 100%;
+  background: url(../img/banner_btn_r.png) center center no-repeat;
+  z-index: 10;
+  cursor: pointer; }
+
+.imgs li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 100%; }
+  .imgs li img {
+    display: block;
+    height: 100%; }
+
+.circles {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; }
+
+.circles li {
+  float: left;
+  margin: 0 10px;
+  width: 11px;
+  height: 11px;
+  background: url(../img/banner_circle.png) center top no-repeat;
+  border-radius: 50%;
+  cursor: pointer; }
+
+.circles .liActive {
+  background: url(../img/banner_circle.png) center -11px no-repeat; }
+
+.gap-20 {
+  padding: 10px; }
+
+.banner {
+  height: 300px; }
+  .banner .circles li {
+    width: 11px;
+    height: 11px; }
+
+.main {
+  background-color: #f1f1f1; }
+
+/* subnav */
+.subbar {
+  width: 100%;
+  height: 66px;
+  margin-top: 13px;
+  border-bottom: 1px solid #d8d8d8;
+  background-color: #fff; }
+
+.sub-wrap {
+  width: 1200px;
+  margin: 0 auto; }
+
+.subnav {
+  float: left; }
+  .subnav li {
+    font-size: 16px;
+    float: left;
+    padding: 25px 10px 20px;
+    cursor: pointer; }
+    .subnav li.active {
+      border-bottom: 4px solid #00dada; }
+  .subnav .nav-middle {
+    margin: 0 90px; }
+
+/* 计算器 */
+.calculator-wrap {
+  float: right; }
+  .calculator-wrap .calculator {
+    line-height: 66px;
+    height: 66px;
+    padding: 0 10px 0 40px;
+    cursor: pointer;
+    background: url("../img/finance_calculator.png") left center no-repeat; }
+
+.finance-content {
+  width: 1200px;
+  margin: 0 auto; }
+
+/* 优选理财计划 */
+.selection {
+  padding: 24px 0 24px 8px; }
+
+.selection-plis {
+  font-size: 15px;
+  color: #707070; }
+  .selection-plis dt {
+    line-height: 24px;
+    float: left;
+    height: 24px; }
+  .selection-plis dd {
+    line-height: 24px;
+    float: left;
+    height: 24px;
+    margin-left: 35px;
+    padding: 0 12px;
+    cursor: pointer; }
+    .selection-plis dd.selected {
+      color: #fff;
+      border-radius: 4px;
+      background-color: #00dada; }
+
+.premium-content {
+  padding: 20px 0; }
+
+/* section */
+.section-table {
+  width: 100%;
+  /* 直线进度条 */ }
+  .section-table .section-item {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 280px;
+    margin-right: 26px;
+    padding: 24px;
+    vertical-align: middle;
+    background-color: #fff; }
+  .section-table .section-item-last {
+    margin-right: 0; }
+  .section-table .item-title {
+    padding-top: 6px;
+    padding-bottom: 30px;
+    text-align: center; }
+    .section-table .item-title h3 {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 21px;
+      height: 21px;
+      color: #424b4d; }
+    .section-table .item-title span {
+      font-size: 12px;
+      line-height: 21px;
+      display: inline-block;
+      width: 102px;
+      height: 21px;
+      margin-left: 18px;
+      text-align: center;
+      color: #fff;
+      background: url(../img/index_tips.png) center center no-repeat; }
+  .section-table .item-profit {
+    font-size: 12px;
+    color: #909090; }
+    .section-table .item-profit p {
+      text-align: center; }
+    .section-table .item-profit .item-percent {
+      font-size: 16px;
+      color: #ff7a7b; }
+      .section-table .item-profit .item-percent em {
+        font-size: 40px; }
+  .section-table .item-btn {
+    font-family: 'Microsoft Yahei';
+    font-size: 16px;
+    line-height: 34px;
+    width: 100%;
+    height: 40px;
+    /* position: absolute;
+    bottom: 30px;
+    right: 38px; */
+    margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    outline: none;
+    background-color: #ff7a7b; }
+  .section-table .item-btn-disabled {
+    pointer-events: none;
+    background-color: #cecece; }
+  .section-table .section-news-item {
+    text-align: center; }
+  .section-table .item-total {
+    display: table;
+    width: 100%; }
+  .section-table .item-money {
+    border-right: 1px solid #c9c9c9; }
+  .section-table .item-money,
+  .section-table .item-due {
+    display: table-cell;
+    float: left;
+    width: 50%;
+    height: 50px;
+    text-align: center; }
+    .section-table .item-money em,
+    .section-table .item-due em {
+      font-size: 20px;
+      display: block;
+      padding-bottom: 12px;
+      color: #000; }
+    .section-table .item-money p,
+    .section-table .item-due p {
+      font-size: 14px;
+      color: #707070; }
+  .section-table .profit-info {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    text-indent: -20px;
+    background: url(../img/index_warn.png) 140px center no-repeat; }
+    .section-table .profit-info i {
+      font-size: 12px;
+      line-height: 1.4;
+      position: absolute;
+      z-index: 9;
+      top: 20px;
+      left: 0;
+      display: none;
+      width: 230px;
+      padding: 5px;
+      text-align: justify;
+      text-indent: 0;
+      color: #e68829;
+      border: 1px solid #ffbb76;
+      background-color: #fffcef; }
+    .section-table .profit-info em {
+      position: absolute;
+      z-index: 10;
+      top: 14px;
+      left: 139px;
+      display: none;
+      width: 14px;
+      height: 7px;
+      background: url(../img/index_tips_arrow.png) center center no-repeat; }
+    .section-table .profit-info:hover i {
+      display: block; }
+    .section-table .profit-info:hover em {
+      display: block; }
+  .section-table .line-progress {
+    position: relative; }
+    .section-table .line-progress p {
+      font-size: 12px;
+      padding-bottom: 12px;
+      color: #707070; }
+    .section-table .line-progress .line-bottom {
+      position: relative;
+      overflow: hidden;
+      width: 185px;
+      height: 4px;
+      background: #ececec url(../img/index_line.png) center center no-repeat; }
+    .section-table .line-progress .line-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ececec; }
+    .section-table .line-progress strong {
+      font-size: 14px;
+      font-weight: normal;
+      position: absolute;
+      top: 20px;
+      right: 0;
+      color: #707070; }
+
+.premium-list {
+  padding: 20px;
+  background-color: #fff;
+  /* 直线进度条 */ }
+  .premium-list .section-item {
+    position: relative;
+    display: table;
+    width: 100%;
+    padding: 20px 0;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+    background-color: #fff; }
+  .premium-list .item-title {
+    display: table-caption;
+    padding-top: 20px; }
+    .premium-list .item-title h3,
+    .premium-list .item-title span {
+      display: inline-block; }
+    .premium-list .item-title h3 {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 21px;
+      height: 21px;
+      color: #424b4d; }
+    .premium-list .item-title span {
+      font-size: 12px;
+      line-height: 21px;
+      margin-left: 18px;
+      text-align: center;
+      color: #fff; }
+    .premium-list .item-title .item-tips {
+      width: 102px;
+      height: 21px;
+      background: url(../img/index_tips.png) center center no-repeat; }
+    .premium-list .item-title .item-quan {
+      width: 53px;
+      height: 21px;
+      background: url(../img/finance_quan.png) center center no-repeat; }
+  .premium-list .item-row {
+    display: table-row;
+    width: 100%; }
+  .premium-list .item-profit,
+  .premium-list .item-btn-wrap,
+  .premium-list .item-due,
+  .premium-list .start-num,
+  .premium-list .line-progress {
+    display: table-cell;
+    height: 40px;
+    text-align: left;
+    vertical-align: bottom; }
+  .premium-list .item-profit {
+    font-size: 12px;
+    width: 300px;
+    color: #909090; }
+    .premium-list .item-profit p {
+      display: inline-block; }
+    .premium-list .item-profit .item-percent {
+      font-size: 24px;
+      color: #ff7a7b; }
+      .premium-list .item-profit .item-percent em {
+        font-size: 34px; }
+  .premium-list .item-btn {
+    font-family: 'Microsoft Yahei';
+    font-size: 16px;
+    line-height: 34px;
+    width: 160px;
+    height: 34px;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    outline: none;
+    background-color: #ff7a7b; }
+  .premium-list .item-btn-disabled {
+    pointer-events: none;
+    background-color: #cecece; }
+  .premium-list .section-news-item {
+    text-align: center; }
+  .premium-list .item-due {
+    width: 180px; }
+  .premium-list .start-num {
+    width: 240px; }
+  .premium-list .item-due,
+  .premium-list .start-num {
+    font-size: 12px;
+    color: #909090; }
+    .premium-list .item-due em,
+    .premium-list .start-num em {
+      font-size: 30px;
+      padding: 0 8px;
+      color: #424b4d; }
+  .premium-list .profit-info {
+    position: relative;
+    padding-right: 30px;
+    cursor: pointer;
+    background: url(../img/index_warn.png) 65px center no-repeat; }
+    .premium-list .profit-info i {
+      font-size: 12px;
+      line-height: 1.4;
+      position: absolute;
+      z-index: 9;
+      top: 20px;
+      left: 0;
+      display: none;
+      width: 192px;
+      padding: 5px;
+      text-align: justify;
+      color: #e68829;
+      border: 1px solid #ffbb76;
+      background-color: #fffcef; }
+    .premium-list .profit-info em {
+      position: absolute;
+      z-index: 10;
+      top: 14px;
+      left: 65px;
+      display: none;
+      width: 14px;
+      height: 7px;
+      background: url(../img/index_tips_arrow.png) center center no-repeat; }
+    .premium-list .profit-info:hover i {
+      display: block; }
+    .premium-list .profit-info:hover em {
+      display: block; }
+  .premium-list .line-progress {
+    width: 270px; }
+    .premium-list .line-progress p {
+      font-size: 12px;
+      padding-bottom: 12px;
+      color: #a3a3a3; }
+    .premium-list .line-progress .line-bottom {
+      position: relative;
+      overflow: hidden;
+      width: 210px;
+      height: 4px;
+      background: #ececec url(../img/index_line.png) center center no-repeat; }
+    .premium-list .line-progress .line-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ececec; }
+
+.selected-content {
+  padding: 20px 0; }
+  .selected-content .selection-slis {
+    padding-top: 40px;
+    padding-bottom: 24px; }
+    .selected-content .selection-slis dt,
+    .selected-content .selection-slis dd {
+      display: inline-block;
+      cursor: pointer; }
+    .selected-content .selection-slis dt {
+      margin-right: 78px;
+      margin-left: 10px; }
+    .selected-content .selection-slis dd {
+      margin-right: 30px;
+      padding-right: 20px;
+      background: url("../img/selected_up.png") right center no-repeat; }
+    .selected-content .selection-slis dt.active {
+      color: #00dada; }
+    .selected-content .selection-slis dd.active {
+      color: #00dada;
+      background: url("../img/selected_up_active.png") right center no-repeat; }
+    .selected-content .selection-slis dd.active-down {
+      color: #00dada;
+      background: url("../img/selected_down.png") right center no-repeat; }
+  .selected-content .selected-list {
+    padding: 24px;
+    background-color: #fff; }
+  .selected-content .selected-item {
+    padding-top: 20px;
+    /* 直线进度条 */ }
+    .selected-content .selected-item h3 {
+      font-size: 18px;
+      color: #424b4d; }
+    .selected-content .selected-item ul {
+      display: table;
+      width: 100%;
+      padding: 20px 0;
+      border-bottom: 1px solid #eee; }
+    .selected-content .selected-item li {
+      display: table-cell;
+      text-align: center;
+      vertical-align: bottom; }
+    .selected-content .selected-item .item-profit {
+      font-size: 17px;
+      text-align: left;
+      color: #ff7a7b; }
+      .selected-content .selected-item .item-profit em {
+        font-size: 30px; }
+    .selected-content .selected-item .item-disc {
+      font-size: 12px;
+      margin-top: 20px;
+      color: #909090; }
+    .selected-content .selected-item .item-detail {
+      font-size: 18px; }
+    .selected-content .selected-item .line-wrap {
+      width: 240px; }
+    .selected-content .selected-item .line-progress {
+      position: relative;
+      width: 150px;
+      padding-bottom: 7px;
+      padding-left: 40px; }
+      .selected-content .selected-item .line-progress p {
+        font-size: 12px;
+        padding-bottom: 12px;
+        color: #a3a3a3; }
+      .selected-content .selected-item .line-progress .line-bottom {
+        position: relative;
+        overflow: hidden;
+        width: 150px;
+        height: 4px;
+        background: #ececec url(../img/index_line.png) center center no-repeat; }
+      .selected-content .selected-item .line-progress .line-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ececec; }
+      .selected-content .selected-item .line-progress strong {
+        font-size: 14px;
+        font-weight: normal;
+        position: absolute;
+        top: -5px;
+        right: -80px;
+        color: #707070; }
+    .selected-content .selected-item .item-btn-wrap {
+      vertical-align: middle; }
+    .selected-content .selected-item .item-btn {
+      font-family: 'Microsoft Yahei';
+      font-size: 16px;
+      line-height: 34px;
+      width: 100px;
+      height: 34px;
+      cursor: pointer;
+      color: #fff;
+      border: 0;
+      border-radius: 4px;
+      outline: none;
+      background-color: #ff7a7b; }
+    .selected-content .selected-item .item-btn-disabled {
+      pointer-events: none;
+      background-color: #cecece; }
+
+/* 债权转让 */
+.debts-content {
+  padding: 20px 0;
+  border-collapse: collapse; }
+
+.debts-table {
+  width: 100%;
+  /* 直线进度条 */ }
+  .debts-table th,
+  .debts-table td {
+    line-height: 74px;
+    height: 74px;
+    text-align: center; }
+  .debts-table th {
+    font-size: 14px;
+    font-weight: normal;
+    color: #707070; }
+    .debts-table th p {
+      display: inline-block;
+      padding-right: 20px;
+      cursor: pointer; }
+  .debts-table td {
+    border-bottom: 1px solid #eee;
+    background-color: #fff; }
+  .debts-table .debts-arrow p {
+    background: url("../img/debts_arrow.png") right center no-repeat; }
+  .debts-table .debts-refresh p {
+    padding: 20px;
+    vertical-align: middle;
+    background: url("../img/finance_refresh.png") center center no-repeat; }
+  .debts-table .debts-title h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #424b4d; }
+  .debts-table .debts-title i,
+  .debts-table .debts-title h3 {
+    display: inline-block; }
+  .debts-table .debts-title i {
+    font-size: 14px;
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+    vertical-align: middle;
+    color: #fff;
+    background: url("../img/debts_icon.png") center center no-repeat; }
+  .debts-table .debts-percent {
+    font-size: 15px;
+    color: #ff7a7b; }
+  .debts-table .debts-money {
+    font-size: 15px; }
+  .debts-table .debts-time {
+    font-size: 15px; }
+  .debts-table .debts-line {
+    width: 200px;
+    padding-right: 40px;
+    padding-left: 60px; }
+  .debts-table .line-progress {
+    position: relative;
+    width: 150px;
+    padding-bottom: 7px; }
+    .debts-table .line-progress p {
+      font-size: 12px;
+      padding-bottom: 12px;
+      color: #a3a3a3; }
+    .debts-table .line-progress .line-bottom {
+      position: relative;
+      overflow: hidden;
+      width: 150px;
+      height: 4px;
+      background: #ececec url(../img/index_line.png) center center no-repeat; }
+    .debts-table .line-progress .line-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ececec; }
+    .debts-table .line-progress strong {
+      font-size: 14px;
+      font-weight: normal;
+      position: absolute;
+      top: -34px;
+      right: -36px;
+      color: #707070; }
+  .debts-table .item-btn {
+    font-family: 'Microsoft Yahei';
+    font-size: 16px;
+    line-height: 34px;
+    width: 100px;
+    height: 34px;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    outline: none;
+    background-color: #ff7a7b; }
+  .debts-table .item-btn-disabled {
+    pointer-events: none;
+    color: #707070;
+    background-color: #ececec; }
+
+/* 分页码 */
+.page1,
+.page2,
+.page3 {
+  height: 90px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: #fff; }
+  .page1 .page_switch,
+  .page2 .page_switch,
+  .page3 .page_switch {
+    height: 50px; }
+
+.cal-crumbs-wrap {
+  background-color: #f1f1f1; }
+
+.cal-crumbs {
+  padding-top: 22px;
+  padding-bottom: 15px;
+  background-color: #f1f1f1;
+  width: 1200px;
+  margin: 0 auto; }
+
+.cal-crumbs,
+.cal-crumbs li,
+.cal-crumbs li a {
+  font-size: 14px;
+  color: #959595; }
+
+.cal-crumbs li {
+  float: left; }
+
+.cal-crumbs li a {
+  outline: none; }
+
+.cal-crumbs li a:active {
+  text-decoration: none; }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="reg-box">
+            <div class="reg">
+                <div class="reg-title clearfix">
+                    <h3>注册</h3>
+                    <p>已有账号？<a href="login.html">马上登录</a></p>
+                </div>
+                <p>
+                    <input type="text" placeholder="请输入您的手机号">
+                </p>
+                <p class="img-valid">
+                    <input type="text" placeholder="请输入图片验证码">
+                    <img src="" alt="图片" border="0">
+                </p>
+                <p class="msg-valid">
+                    <input type="text" placeholder="请输入手机验证码">
+                    <span>获取验证码</span>
+                </p>
+                <p>
+                    <input type="password" placeholder="请设置密码">
+                </p>
+                <div class="rec">
+                    <p>我有推荐码<span>（选填）</span></p>
+                    <input type="text" placeholder="请输入推荐码">
+                </div>
+                <div class="rem">
+                    <p class="checkbox rem-checked">
+                        我已阅读并接受
+                    </p>
+                    <a href="#">《水珠钱包注册协议》</a>
+                </div>
+                <p class="log-btn">
+                    <button>马上注册</button>
+                </p>
+                <p class="log-info">
+                    如有疑问，请咨询400-827-6999
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>上海水象金融信息服务公司2016All Rights Reserved.沪ICP备16010991号-2</p>
+                <p><span id="kx_verify"></span>
+                    <span id="ppbVerify" logo_size="96x36" logo_type="business"><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></span>
+                    <span><a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.beadwallet.com&lang=zh_cn" target="_blank"><img src="img/foot_norton.png" alt=""></a></span>
+                    <span><a href="http://webscan.360.cn/index/checkwebsite/url/www.beadwallet.com" target="_blank"><img border="0" src="img/foot_360.png"/></a></span>
+                    <span><a id="_pingansec_bottomimagesmall_p2p" href="http://si.trustutn.org/info?sn=161161027000542311841&certType=4" target="_blank"><img border="0" src="img/foot_hyrz.png"/></a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        var _kxs = document.createElement('script');
+        _kxs.id = 'kx_script';
+        _kxs.async = true;
+        _kxs.setAttribute('cid', 'kx_verify');
+        _kxs.src = 'https://ss.knet.cn/static/js/icon3.js?sn=e16062231011563943syrj000000&tp=icon3';
+        _kxs.setAttribute('size', 0);
+        var _kx = document.getElementById('kx_verify');
+        _kx.parentNode.insertBefore(_kxs, _kx);
+
+    })();
+    
+    $(function() {
+        window.onresize = resizeH;
+        resizeH();
+        checked();
+        $('input').placeholder({customClass:'my-placeholder'});
+    });
+
+    function checked(){
+    	$('.checkbox').on('click', function(){
+    		if($(this).hasClass('rem-checked')){
+    			$(this).addClass('rem-unchecked').removeClass('rem-checked');
+    		}else if($(this).hasClass('rem-unchecked')){
+    			$(this).addClass('rem-checked').removeClass('rem-unchecked');
+    		}
+    	});
+    }
+
+    function resizeH() {
+        var cH = $(window).height();
+        var tH = $('.header').height();
+        var fH = $('.footer').height();
+        var rH = $('.reg').outerHeight();
+        dH = cH - tH - fH;
+
+        $('.container').height(function() {
+            if (dH > rH) {
+                return dH;
+            } else {
+                return rH;
+            }
+        });
+        $('.reg').css('margin-top', -rH/2);
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<div class="personal clearfix">
+    <div class="personal-left">
+        <ul class="left-nav">
+            <li class="left-selected">我要推荐</li>
+            <li class="">推荐记录</li>
+        </ul>
+    </div>
+    <div class="personal-right">
+        <div class="tuijian active">
+            <p class="font-w-b">推荐流程</p>
+            <div class="m_t15 tuijian1">
+                <ul class="clearfix tuijian2">
+                        <li><img src="img/tuijian3.jpg" /><span>复制链接</span></li>
+                        <li class="tuijian_">
+                        <img src="img/tuijian4.jpg" />
+                        <span>微信</span>
+                            <div class="clearfix" style="display:none">
+                            <img src=""  class="fl" />
+                            <div class="fl">
+                                    <p class="font-w-b">扫描分享额外福利</p>
+                                    <p class="font-w-b m_t45">扫描分享额外福利</p>
+                                    <p class="font-w-b m_t15">扫描分享额外福利</p>
+                            </div>
+                            </div>
+                        </li>
+                        <li><img src="img/tuijian5.jpg" /><span>QQ</span></li>
+                        <li><img src="img/tuijian6.jpg" /><span>微博</span></li>
+                        <li><img src="img/tuijian7.jpg" /><span>QQ空间</span></li>
+                </ul>
+            </div> 
+            <p class="font-w-b m_t30">推荐奖励</p>
+            <img src="img/tuijian2.jpg" class="m_t15">
+        </div>    
+        <div class="tuijian ">
+                <p class="font-w-b">推荐记录</p>
+            <table class="m_t25 myTable">
+                <thead>
+                    <tr class="t2">
+                        <td width="">序号</td>
+                        <td width="">好友昵称</td>
+                        <td width="">我的奖励</td>
+                        <td width="">好友投资时间</td>
+                        <td width="">好友投资产品</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="t1">
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>每页6条数据你懂得</td>
+                    </tr>
+                    <tr class="t2">
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="aaa m_t30 text-center"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function() {
+    $('.left-nav li').on('click', function() {
+        $(this).addClass('left-selected').siblings().removeClass('left-selected');
+        $(".personal-right>div.tuijian").eq($(this).index()).addClass("active").siblings().removeClass("active");
+    });
+    page_switch({
+        "ob": ".aaa", //创建分页位置
+        "page_all": 2, //总页数
+        "start_page": "", //初始页数
+        "turn": true, //是否显示跳转控件
+        "fn": function(num) { //AJAX 参数为选择的页码
+            //console.log(num)
+        },
+        "dialog": function(num) { //错误跳转提示 参数为选择的页码
+            //alert(num+"是错误的页码")
+        }
+    });
+    $(".tuijian2 li").hover(function(){
+           $(this).children("img").animate({"top":"-10px"},{
+                "speed":100,
+                "queue":false
+           });
+            $(this).find("div.clearfix").show();
+    },function(){
+         $(this).children("img").animate({"top":"0"},{
+                "speed":100,
+                "queue":false
+           });
+         $(this).find("div.clearfix").hide();
+    });
+});
+</script>

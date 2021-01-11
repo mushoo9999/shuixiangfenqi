@@ -1,0 +1,4 @@
+*{ margin: 0; padding: 0;  }
+html,body { }
+.loading{ display: none; position: fixed; top: 0; left: 0; z-index: 99999; width: 100%; height: 100%;background: rgba(200,200,200,.5) url(../img/loading.gif) center 30% no-repeat; }
+.lintro { position: absolute; top: 33%; left: 0; z-index: 100000; width: 100%; font-size: 14px; text-align: center; color: #464646; }

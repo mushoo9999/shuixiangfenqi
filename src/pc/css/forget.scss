@@ -1,0 +1,140 @@
+@charset "UTF-8";
+@import '../../../includ/scss/_reset';
+@import '../../../includ/scss/public';
+.forget {
+    @include comw;
+    >h3 {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 35px;
+        font-size: 18px;
+        color: #434c4e;
+    }
+}
+
+.subnav {
+    display: table;
+    width: 100%;
+    li {
+        display: table-cell;
+        padding: 15px 0;
+        width: 25%;
+        font-size: 14px;
+        color: #ececed;
+        text-align: center;
+        border-bottom: 5px solid #ececed;
+        cursor: pointer;
+    }
+    li.active {
+        color: #434c4e;
+        border-color: #00dada;
+    }
+    em {
+        font-style: italic;
+        font-size: 24px;
+        padding: 0 10px;
+    }
+}
+
+.forget-content {
+    padding: 30px 0;
+    >div {
+        display: table;
+        margin: 20px 0;
+        width: 100%;
+        >* {
+            display: table-cell;
+        }
+    }
+    label {
+        padding-right: 30px;
+        width: 495px;
+        text-align: right;
+        font-size: 14px;
+        color: #434c4e;
+    }
+    input {
+        padding: 12px 20px;
+        width: 300px;
+        font-size: 14px;
+        background-color: #f2f2f2;
+    }
+    .forget-btn {
+    	margin: 40px 0;
+    }
+    .forget-info{
+		display: block;
+		width: 100%;
+		text-align: center;
+		>*{
+			display: inline;
+		}
+		a{
+			color: #00dada;
+		}
+	}
+}
+
+.forget-btn {
+    text-align: center;
+    button{
+    	width: 180px;
+    	height: 46px;
+    	line-height: 46px;
+    	font-size: 18px;
+    	color: #fff;
+    	background-color: #00dada;
+		cursor: pointer;
+		border: 0;
+		outline: 0;
+		border-radius: 5px;
+    }
+}
+
+.f-img-valid{
+	position: relative;
+	img{
+		width: 90px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 210px;
+		border: 0;
+		outline: 0;
+		cursor: pointer;
+	}
+}
+
+.forget-tips{
+	padding-top: 140px;
+	font-size: 18px;
+	color: #434c4e;
+	font-weight: bold;
+	background: url("../img/forget_tips.png") center 30px no-repeat;
+	text-align: center;
+}
+
+
+.my-placeholder {
+    color: #00bdbd;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #00bdbd;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #00bdbd;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #00bdbd;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #00bdbd;
+}

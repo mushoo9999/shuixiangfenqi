@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="css/loading.css">
+    <script src="js/main.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/bgpos.js"></script>
+	<script src="js/common.js"></script>
+    <title>正常还款</title>
+</head>
+
+<body class="repayment-body">
+    <div class="container">
+        <div class="gap"></div>
+        <div class="repay-state">
+            <h3>借款金额（元）</h3>
+            <p class="repay-num"></p>
+            <div class="repay-info">
+                <p>借款期限：<span>暂无</span></p>
+                <p>还款方式：<span>暂无</span></p>
+            </div>
+        </div>
+        <div class="gap"></div>
+		<div id="repayDetailId"></div>
+    </div>
+	<script>
+		var orderId=getParameter("orderId");
+		$(function(){
+			$.post('/beadwalletloanapp/app/my/appCheckLogin/findBwOrderByOrderId.do',{"orderId":orderId,"loginToken":getLoginToken()}, function(data){
+				if(data!=null&&data!=''){
+					var bwOrder=data.result;
+					if(bwOrder){
+						$(".repay-num").html(toAmount(bwOrder.borrowAmount));
+						if(bwOrder.repayTerm!=null&&bwOrder.repayTerm!=''){
+							$(".repay-info p").eq(0).find("span").html(bwOrder.repayTerm+"个月");
+						}
+						if(bwOrder.repayType!=null&&bwOrder.repayType!=''){
+							$(".repay-info p").eq(1).find("span").html(bwOrder.repayType==1?'先息后本':'等额本息');
+						}
+					}
+				}
+			});
+			$.post('/beadwalletloanapp/app/my/appCheckLogin/findBwRepaymentPlanPage.do',{"orderId":orderId,"loginToken":getLoginToken()}, function(data){
+				var html=new Array();
+				if(data.code=='000'){
+					if(data.result){
+						var rows=data.result.rows;
+						$("#repayDetailId").html("");
+						if(rows && rows.length>0){
+							for(var i=0;i<rows.length;i++){
+								var bwRepaymentPlan=rows[i];
+								var year=new Date(bwRepaymentPlan.repayTime).getFullYear();
+								var month=new Date(bwRepaymentPlan.repayTime).getMonth()+1;
+								var day=new Date(bwRepaymentPlan.repayTime).getDate();
+								var dayStr=month+'月'+day+'日';
+								var currYear=new Date().getFullYear();
+								var currMonth=new Date().getMonth()+1;
+								var currDay=new Date().getDate();
+								html.push('<div class="repay-detail">');
+								html.push('<div class="repay-item">');
+								html.push('<p><span class="repay-date fl">');
+								html.push(dayStr);//日期
+								html.push('</span><span class="fr">');
+								html.push(toAmount(bwRepaymentPlan.realityRepayMoney)+"元");//实际还款金额
+								html.push('</span></p>');
+								html.push('<p>');
+								//if(year==currYear&&month==currMonth){
+									html.push('<span class="repay-cur fl">本期</span>');
+								//}
+								html.push('<span class="repay-interest fr">还款金额类型：');
+								if(bwRepaymentPlan.repayIsCorpus==1){
+									html.push("利息");//利息
+								}else{
+									html.push("本金加利息");//利息
+								}
+								html.push('</span></p>');
+								html.push('</div></div>');
+							}
+							$("#repayDetailId").html(html.join(""));
+						}
+					}
+				}else{
+					alert(data.msg);
+					return false;
+				}
+			});
+		})
+	</script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+</body>
+
+</html>

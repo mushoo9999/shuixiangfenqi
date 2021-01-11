@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="css/loading.css">
+    <script src="js/main.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<!-- <script src="js/common.js"></script> -->
+	<title>还款</title>
+</head>
+<body>
+	<div class="repay-nav repay-none-nav">
+		<div class="repay-lis">还款</div>
+		<div class="repay-lis repay-active">历史借款</div>
+	</div>
+	<div class="repay-content" style="display: none">
+		<div class="none-info">
+			您还没有借款记录
+		</div>
+		<div class="gap-100"></div>
+		<div class="btn-wrap">
+			<button class="loan-btn">立即申请借款</button>
+		</div>
+	</div>
+	<div class="history-content">
+		<div class="loan-lis loan-settle-lis">
+			<p>借款金额： 2,000元</p>
+			<p>借款期限： 3个月</p>
+			<p>申请时间： 2016年8月12日 19:26:26</p>
+			<div class="repay-state"></div>
+		</div>
+		<div class="loan-lis loan-back-lis">
+			<p>借款金额： 2,000元</p>
+			<p>借款期限： 3个月</p>
+			<p>申请时间： 2016年8月12日 19:26:26</p>
+			<div class="repay-state"></div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			switchNav();
+		});
+		function switchNav(){
+			$('.repay-lis').on('click', function(){
+				$(this).addClass('repay-active').siblings().removeClass('repay-active');
+				if($(this).index() == 0){
+					$('.repay-content').show();
+					$('.history-content').hide();
+				}else{
+					$('.repay-content').hide();
+					$('.history-content').show();
+				}
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+@mixin bg($url, $size:100%, $pos:center, $re:no-repeat) {
+    background-image: $url;
+    background-size: $size;
+    background-position: $pos;
+    background-repeat: $re;
+}
+
+@mixin wh( $w, $h, $d:null) {
+    width: to($w);
+    height: to($h);
+    display: $d;
+}
+
+@mixin slh {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin pos($x:-50%, $y:-50%) {
+    position: absolute;
+    -webkit-transform: translate3d($x, $y, 0);
+    transform: translate3d($x, $y, 0);
+}
+
+@mixin font($fs:null, $ys:null, $hg:null, $wz:center) {
+    font-size: $fs;
+    color: $ys;
+    line-height: $hg;
+    text-align: $wz;
+}
+
+@mixin flex_box {
+    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+    display: -moz-box; /* Firefox 17- */
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+    display: -moz-flex; /* Firefox 18+ */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+}
+
+@mixin df($df:1) {
+    -webkit-box-flex: $df;
+    box-flex: $df;
+    -webkit-flex: $df;
+    flex: $df;
+}
+
+@mixin flex_cz {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+}
+
+@mixin flex_sp {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+}
+
+@mixin flex_justify($old:center, $new:center){
+    -webkit-justify-content:$old;
+    -webkit-box-pack:$new;
+    justify-content:$old;
+    box-pack:$new;
+}

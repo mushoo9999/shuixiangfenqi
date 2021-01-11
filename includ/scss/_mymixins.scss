@@ -1,0 +1,35 @@
+%p {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: center;
+    display: -o-box;
+    -o-box-orient: horizontal;
+    -o-box-pack: center;
+    display: -ms-box;
+    -ms-box-orient: horizontal;
+    -ms-box-pack: center;
+    display: box;
+    box-orient: horizontal;
+    box-pack: center;
+}
+
+@mixin lgrad($color1,$color2) {
+  background: -webkit-linear-gradient($color1 , $color2); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient($color1, $color2); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient($color1, $color2); /* Firefox 3.6 - 15 */
+  background: linear-gradient($color1 , $color2); /* 标准的语法 */
+}
+
+@mixin dlgrad($color1,$color2,$color3) {
+  background: -webkit-linear-gradient($color1 , $color2,$color3); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient($color1, $color2,$color3); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient($color1, $color2,$color3); /* Firefox 3.6 - 15 */
+  background: linear-gradient($color1 , $color2,$color3); /* 标准的语法 */
+}

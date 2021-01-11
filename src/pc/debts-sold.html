@@ -1,0 +1,127 @@
+<dl class="invest-condition">
+    <dt>
+        筛选
+    </dt>
+    <dd class="invest-selected">可转让的</dd>
+    <dd>转让中的</dd>
+    <dd>已完成的</dd>
+    <dt>持有时间
+        <div class="select-wrap">
+            <div class="select_div">
+                <span>1个月<em><img src="img/invest_arrow.png" /></em></span>
+                <div>
+                    <ul>
+                        <li title="">1个月</li>
+                        <li>2个月</li>
+                        <li>3个月</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </dt>
+    <dt><button>查询</button></dt>
+</dl>
+<table class="invest-table">
+    <thead>
+        <tr>
+            <th>投资日期</th>
+            <th>标的名称</th>
+            <th>投资金额</th>
+            <th>利率</th>
+            <th>借款期限</th>
+            <th>回款期数</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table>
+<div class="ipage3"></div>
+<script type="text/javascript">
+$(document).ready(function() {
+    page_switch({
+        "ob": ".ipage3",
+        "page_all": 20,
+        "start_page": "",
+        "turn": true
+    });
+    $('.invest-condition dd').on('click', function() {
+        $(this).addClass('invest-selected').siblings('dd').removeClass('invest-selected');
+    });
+    $('.invest-table tbody tr:nth-of-type(even)').addClass('odd');
+
+    selectDiv();
+});
+
+function selectDiv() {//select 模拟
+    $(".select_div span").on("click", function() {
+        var n = $(this).siblings();
+        if (n.hasClass("active")) {
+            n.removeClass("active");
+            $(this).width("auto")
+        } else {
+            n.addClass("active");
+            $(this).outerWidth(n.outerWidth())
+        }
+    });
+    $(".select_div ul li").on("click", function() {
+        var n = $(this).parents(".select_div");
+        n.find("span").text($(this).text()).width("auto");
+        n.find("div").removeClass("active");
+
+    });
+    $(".select_div>div ul").each(function(i, n) {
+        function mouseWheel(ob, fn) {
+            var a = ob;
+            var b = fn
+            function getData(event) {
+                var data = 0;
+                if (!event) event = window.event;
+                event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+                if (event.wheelDelta) {
+                    data = event.wheelDelta / 150;
+                    if (window.opera) delta = -data;
+                } else if (event.detail) {
+                    data = -event.detail / 3;
+                }
+                b(data);
+            }
+            if (window.addEventListener)
+                a.addEventListener('DOMMouseScroll', getData, false);
+            a.onmousewheel = getData;
+        }
+        mouseWheel(n, function(data) {
+            var top = Number($(n).css('top').replace("px", ""));
+            top += (data * 10);
+            if (top >= 0) {
+                top = 0;
+            } else if (top <= ($(n).parent().height() - $(n).height())) {
+                top = $(n).parent().height() - $(n).height();
+            }
+            $(n).css("top", top);
+        })
+    });
+}
+</script>

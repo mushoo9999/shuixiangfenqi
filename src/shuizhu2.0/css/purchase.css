@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+/*通用*/
+*{margin:0px;padding:0px;}
+body{font-family:'Microsoft YaHei';font-size:16px;color:#464646;}
+body,ul,li{margin:0px;padding:0px;}
+ul{list-style:none;}
+.comWidth{width:100%;margin:0 auto;width:1200px;}
+a{text-decoration:none;outline: none}
+.clearfix:after{content: "";clear:both;display:block;}
+.font-b{font-size:18px;color:#434343}
+.font-m{font-size:14px;color:#707070}
+.font-w-b{font-weight:bold}
+.font-hei{color:#424b4d}
+.font-blue{color:#00dada}
+.font-hong{color:#ff7a7b}
+.font-hui{color:#707070}
+.font-qian{color:#909090}
+.font-dan{color:#bab9b9}
+.font-context{color:#6f6f6f;line-height:35px}
+.font-context1{color:#6f6f6f;line-height:24px}
+.font-12{font-size:12px}
+.font-14{font-size:14px}
+.font-20{font-size:20px}
+.font-24{font-size:24px}
+.font-33{font-size:33px}
+.font-36{font-size:36px}
+.font-bg{font-size:48px}
+.m_t5{margin-top:5px}
+.m_t15{margin-top:15px}
+.m_t25{margin-top:25px}
+.m_t20{margin-top:20px}
+.m_t30{margin-top:30px}
+.m_t35{margin-top:35px}
+.m_t40{margin-top:40px}
+.m_t45{margin-top:45px}
+.m_t50{margin-top:50px}
+.m_t70{margin-top:70px}
+.m_t90{margin-top:90px}
+.m_l20{margin-left:20px}
+.m_l30{margin-left:30px}
+.p_l20{padding-left:20px}
+.p_t20{padding-top:20px}
+.p_30{padding:30px}
+.m_t10{margin-top:10px}
+.pointer{cursor: pointer}
+.bg_white{background-color:white}
+.text-center{text-align: center}
+.text-left{text-align: left !important}
+.text-right{text-align: right}
+.v_m{vertical-align: -10%}
+.font-blue{color:#00dada !important}
+.line-hui{border-top:2px solid #ececec;width:60px;margin:20px auto}
+.fl{float:left}
+.fr{float:right}
+i{font-style:normal;}
+.relative{position:relative}
+/*标题 header*/
+.mod{margin-top:25px;padding:0 35px;background-color:#fff}
+.header{background-color:#fff;color:#000;border-bottom:1px solid #e5e5e5;padding:20px 0;font-weight:bold}
+.header>img{vertical-align:-15%;margin-left:12px}
+/*内容1*/
+.mod-1 ul{background-color:#fff;display:table;margin-top:20px;width:100%}
+.mod-1 li{border-right:1px solid #e5e5e5;text-align: left;display:table-cell}
+.mod-1 li:last-child{border:none}
+.mod-1-1{width:715px;float:left;margin-right:10px;height:350px}
+.mod-1-2{width:325px;float:left;overflow:hidden;height:350px}
+.mod-1-2  .text{width:100%;padding-right:40px;box-sizing: border-box;border:1px solid #dcdcdc;height:40px;position:relative;border-radius: 5px}
+.text input[type=text]{width:100%;box-sizing: border-box;border:none;box-shadow:none;background:transparent;height:100%;outline: none;text-indent: 15px;font-size:20px;line-height: 20px;color:#707070}
+.text span{position:absolute;right:0;height:40px;width:40px;text-align: center;line-height: 40px;color:#707070;font-size:14px}
+.mod-1-2 button{background-color: #ff7a7b;width:100%;height:40px;text-align: center;color:#fff;font-size:18px;border-radius: 5px ;border:none;cursor: pointer;}
+.mod-1-2 input[type=checkbox]{margin-right:5px;vertical-align: -10%;outline: none}
+.info_ div.fl{min-width:260px;display:inline-block;font-size:15px;color:#707070}
+.percent{font-size:48px;color:#ff7a7b;}
+/*内容2 投标周期*/
+.hetong img{vertical-align:-15%;margin-right:10px}
+.tab-link{margin-top:22px}
+.tab-link,.tab-link li,.tab-link li a{font-size:14px;color:#959595}
+.tab-link li{float:left}
+.tab-link li a{outline: none}
+.tab-link li a:active{text-decoration: none}
+.mod-2{background-color: #fff}
+.mod-2 ul{width:100%;}
+.mod-2 ul li{float:left;width:25%;text-align: center;padding:30px 0}
+.info{padding:27px 0;background-color:#fff;}
+.mod-3{padding:15px 35px ;background-color: #fff}
+.subnav{border-bottom:2px solid #e5e5e5;height:50px;line-height:50px}
+.subnav li{ width: 120px; float:left; font-size: 16px; color: #424b4d; text-align: center;cursor: pointer; margin:0 20px}
+.subnav li.active{ border-bottom: 2px solid #00dada; }
+.subnav.subnav_1{border-bottom:0}
+.subnav.subnav_1 li.active{color:#00dada}
+.ico1{background: url("../img/biaodi.png") center center no-repeat;background-size: 100% 100%;height:21px;width:69px;color:#fff;font-size:12px;display:inline-block;text-align: center;line-height: 21px;margin-left:10px;vertical-align: top;}
+/*投资记录*/
+.info2 table{width:1152px;border-collapse: collapse;font-size:15px;line-height:47px;color:#707070}
+.info2 th{height:47px;font-weight:normal;background-color:#f7f7f7;}
+.info2 td{height:47px;line-height:40px;text-align:center;padding:0 20px}
+.info2 .tr1 td{background-color:#fff;}
+.info2 .tr2 td{background-color:#f7f7f7;}
+/*进度条*/
+.line-progress{display:inline-block;vertical-align: middle;margin-left:10px}
+.line-progress .line-bottom {overflow: hidden; position: relative; width: 210px; height: 4px; border-radius:3px; background: #ececec url(../img/index_line.png) center center no-repeat; }
+.line-progress .line-top {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #ececec; }
+/*公告*/
+.gonggao_ul{padding:10px 0}
+.gonggao_ul li{list-style:none;border-bottom:1px dashed #ececec;padding:30px 40px}
+.gonggao_ul a{color:inherit}
+.gonggao_ul a:hover{color:#00dada}
+.xiangqing_ul li{height:40px}
+.xiangqing_ul li.li1{background-color:#f7f7f7}
+.xiangqing_ul li span{min-width:200px;display:inline-block;height:100%;line-height: 40px}
+hr{border:none;border-top:1px solid #ececed}
+/*分页*/
+.page_switch{color:#999;padding:5px 0px 5px 0px;font-size:16px;text-align: center;display:inline-block;}
+.page_switch:after{content: "";display: block;clear:both}
+.page_wrap span{height:35px;float:left;line-height: 35px;display:inline-block;padding:0 10px;margin-right:10px;background-color:#fff;color:#909090;cursor: pointer;border:1px solid #e5e4e2}
+.page_wrap span.disabled{pointer-events: none;background-color:#e5e4e2;color:#fff}
+.page_switch ul{display: inline-block}
+.page_switch .page_wrap{display: inline-block;float:left}
+.page_switch .page_wrap:after{content: "";display: block;clear:both}
+.page_wrap ul{overflow: hidden;float:left}
+.page_wrap li{display:inline-block;width:37px;line-height: 35px;height:35px;margin-right:10px;background:#fff;color:#909090;cursor: pointer;border:1px solid #e5e4e2;float:left}
+.page_wrap li.page_no{cursor: auto;border:1px solid #fff}
+.page_wrap li.on{border:1px solid #48d7dc;color:#48d7dc;}
+.page_wrap li:hover{border-color:#48d7dc;color:#48d7dc;}
+.page_wrap li.page_no:hover{color:inherit;border-color:#fff;}
+.page_gopage{display:inline-block;height:37px;margin-right:10px;background-color:#fff;color:#909090;cursor: pointer;border:1px solid #e5e4e2;width:50px}
+.page_gopage i{display:inline-block;font-style: normal;}
+.page_switch_btn_go_input{height:35px;line-height:35px;color:#464646;text-align:center;border:1px solid #e5e2e4;outline:none;width:50px}
+.page_switch .goPageBox{color:#464646;font-size:14px;height:37px;float: left;background-color: #fff;}
+.page_change{float: left;zoom:1;position: relative;z-index: 2;}
+.page_wrap .page_all{font-size:12px;height: 35px; float: left; line-height: 35px; display: inline-block; padding: 0 10px; margin-right: 10px;}
+ .page_switch .queding{z-index: -1; position: absolute; left:50%; top:0; width: 50px; height:33px; border: 0px; overflow: hidden; font-size: 14px; text-align: center; cursor: pointer; background-color: #fb820c; color: #FFF; margin-left:10px; float: left; outline: none; }
+.wrap{background-color: #f0f0f0; } 
+/*资产管理*/
+  .zichan>div{display:none}
+  .zichan>div.active{display:block}
+  .youhuiquan,.tixian,.chongzhi{padding:16px 30px;}
+  .header_tab{display: block;width:100%;font-size:16px;line-height: 16px;border-bottom:1px solid #e5e5e5}
+  .header_tab li{padding:8px 12px;float:left;cursor: pointer;height:33px}
+  .header_tab li i{background: url("../img/youhuiquan.png") bottom center no-repeat;height:16px;width:16px;background-size: 100% 100%;display:inline-block;vertical-align: 5%;margin-left:5px;color:#fff;font-size:12px;line-height: 16px;text-align: center}
+  .header_tab li.active{border-bottom:2px solid #00dada}
+  .youhuiquan>div{display:none}
+  .youhuiquan>div.active{display:block}
+  .youhui,.buyouhui,.tixian_1,{padding:38px 0}
+  .youhui_ul li{float:left;height:272px;width:221px;background: url("../img/youhuiquan2.jpg") no-repeat;color:#fff;margin-left:18px;background-size: 100% 100%;position: relative}
+  .youhui_ul li:first-child{margin-left:0}
+  .youhui_ul li p:first-child{margin-top:177px}
+  .buyouhui .youhui_ul li:before{content:"";background: url("../img/hongbao_03.png") no-repeat ;height:100%;width:100%;position: absolute;top:0;left:0}
+  .wenxin{border:1px dashed #e5e5e5;padding:17px 13px 17px 35px;position:relative;line-height:16px}
+  .wenxin:before{content: "";background: url(../img/star.png) top center no-repeat;background-size: 100% 100%;display: inline-block;height:16px;width:16px;position:absolute;top:17px;left:13px}
+  .jine span:first-child{width:77px;height:38px;line-height: 38px;display:inline-block}
+.jine input{width:250px;height:36px;border:1px solid #eee;line-height: 36px;padding-left:15px}
+.tixian_form button{width:160px;height:38px;margin-left:77px;color:#fff;text-align: center;background-color: #48d7dc;border:none;outline: none;cursor: pointer;margin-bottom:40px}
+.chongzhi_ button{width:160px;height:38px;margin-left:77px;color:#fff;text-align: center;background-color: #ff7a7b;border:none;outline: none;cursor: pointer;margin-bottom:40px}
+.chongzhi .header_tab{overflow:hidden}
+.chongzhi>div{display: none}
+.chongzhi>div.active{display: block}
+.chongzhi .header_tab:after{content: "请放心充值、投资与提现，您的账户信息已使用SSL加密技术，数据传输安全";display: block;position: absolute;right:0;top:0;background-color: transparent;width:auto;height:100%;line-height: 38px;font-size:14px;z-index: 1;}
+.chongzhi .header_tab:before{content:"";background: url("../img/xiaodunpai.png") center center no-repeat;height:16px;width:14px;position: absolute;z-index: 2;background-size: 100% 100%;top:34%;left:47%}
+.bank_ico{width:808px;padding-bottom:10px;border-bottom:1px solid #eee}
+.bank_ico li{float: left;list-style: none;width:190px;height:40px;border:1px solid #eee;margin-right:10px;margin-bottom:10px;cursor: pointer;}
+.bank_ico li.active{border:1px solid #ff7a7b;position: relative}
+.bank_ico li.active:before{background: url("../img/duigou.png") no-repeat;height:16px;width:16px;position: absolute;top:0;left:0;display: block;content: ""}
+.bank_ico li img{width:100%;height:100%;outline: none;border:none}
+.bank_more{background-color: #ccf8f8;text-align: center;line-height: 40px}
+.bank_more:after{content: "";background: url("../img/JT.png") no-repeat center center;background-size: 100% 100%;width:13px;height:7px;vertical-align: middle;display:inline-block;margin-left:7px}
+.table_form>div{display:inline-block}
+/*select*/
+.table_form .table{display: table;float: left}
+.table_form .table>div,.table_form .table>span{display:table-cell;vertical-align: middle;}
+.select_div{position: relative ;display: inline-block;min-width:100px}
+.select_div>span{height:24px;line-height: 24px;display: block;border:1px solid #eee;cursor: pointer;width:100%;font-size:14px}
+.select_div>span>span{height:100%;display: inline-block;padding-left:5px;padding-right:5px}
+.select_div>div{display: none;max-height:90px;overflow:hidden;position: absolute;z-index:100;background-color: #fff;width:100%;overflow: hidden}
+.select_div>div.active{display: block}
+.select_div em{float: right; height: 100%; display: inline-block;width:25px;background-color: #fff;background-color: #00dada;text-align: center}
+.select_div em  img{width:16px;height:8px;vertical-align: middle}
+
+.select_div ul{border-right:1px solid #eee;position: relative;top:0;left:0}
+.select_div ul li{font-size:14px;border-left:1px solid #eee;border-bottom:1px solid #eee;height:30px ;line-height:30px;background-color:#fff;cursor: pointer;padding:0 5px}
+.select_div ul li:hover{background-color:  #f7f7f7}
+.time_div{display: inline-block;}
+.time_div span{height:24px;line-height: 24px;display: block;border:1px solid #eee;padding-left:5px;cursor: pointer;min-width:105px;font-size:14px}
+.time_div em{float: right; height: 100%; display: inline-block;width:24px;background-color: #00dada;text-align: center}
+.time_div em img{width:15px;height:15px;vertical-align: -4%}
+button.chaxun{width:96px;height:24px;background-color: #ff7a7b;outline: none;text-align: center;border:none;cursor: pointer;color:#fff;font-size:14px}
+table.chongzhi_table{width:800px}
+.myTable {width:100%}
+.myTable tr td{color:#707070;height:40px;text-align: center;vertical-align: middle;border:none;border-collapse: collapse;}
+.myTable tr.t1{background-color:#fff;}
+.myTable tr.t2{background-color:#f7f7f7}
+/*推荐管理*/
+.tuijian{display: none;padding:25px 40px;}
+.tuijian1{background:url("../img/tuijian1.jpg")no-repeat;height:263px;width:800px;padding:34px 64px}
+.tuijian2 li{ float: left;margin-left:60px;cursor: pointer;position: relative;height:101px;width:85px}
+.tuijian2 li>img{position: relative;top:0}
+.tuijian2 li:first-child{margin-left:0}
+.tuijian2 li span{display: block;text-align: center;color:#535353;font-size: 14px;position: absolute;width:100%}
+.tuijian.active{display: block}
+.tuijian_>div{background: url("../img/tuijian_.png") no-repeat;height:168px;width:377px;background-size: 100% 100%;position: absolute;top:-180%;left:-55%;padding:20px}
+.tuijian_ div img{width: 102px;height:102px}
+.tuijian_ div div{margin-left:28px;letter-spacing: 3px;font-size:14px;height:102px;}
+/*账号设置*/
+.zhanghao{padding:40px 20px}
+.zhanghao_t{display: table;width:370px;height:92px;margin-left:auto;margin-right:auto}
+.zhanghao_t>div{display: table-cell;vertical-align: middle}
+.zhanghao_b{display: table;width:270px;height:92px;margin-left:auto;margin-right:auto}
+.zhanghao_b>div{display: table-cell;vertical-align: middle}
+.zhanghao_t a{line-height: 16px;text-decoration: underline;}
+.zhanghu_table{width:100%;}
+.zhanghu_table tr{border-top:1px solid #eee}
+.zhanghu_table tr:first-child{border-top:none}
+.zhanghu_table td{text-align: center;vertical-align: middle;padding:30px 15px}
+.zhanghu_table td.yes:before{content: "";background: url("../img/yes.png") no-repeat center center;background-size: 100% 100%;width:17px;height:17px;display: inline-block;vertical-align: -15%}
+.dialog{padding:16px 30px 46px 30px;font-size:14px}
+.form_group{position: relative}
+.form_group span.label{width:80px;height:30px;display: inline-block;text-align: left;vertical-align: top;line-height: 30px;color:#434c4e}
+.form_group span.radio{width:100px;height:30px;display: inline-block;text-align: left;vertical-align: top;line-height: 30px;color:#434c4e;padding-left:5px}
+.form_group input[type=text]{margin-left:5px;width:200px;height:30px;background-color: #f2f2f2;display: inline-block;padding-left:10px;padding-right:10px;line-height: 20px;font-size:13px}
+.form_group label.file{cursor: pointer;margin-left:5px;width:200px;height:30px;background-color: #f2f2f2;display: inline-block;padding-left:10px;padding-right:10px;line-height: 20px;font-size:13px}
+.form_group label.file input{display: none}
+.form_group input[type=text].input_no{border:none;background-color: #fff;}
+.form_group input[type=radio]{-webkit-appearance:radio}
+.form_group .code1{line-height: 29px;position: absolute;top:0;left:67%;height:29px;min-width: 100px;text-align: center;background-color: #00dada;color:#fff;font-size: 14px;cursor: pointer;}
+.sub{width:140px;height:30px;border:none;text-align: center;background-color: #00dada;line-height: 30px;color:#fff;cursor: pointer;outline: none;font-size:16px}
+.no_sub{margin-left:40px;width:140px;height:30px;background-color: #ececed;color:#fff;line-height: 30px;text-align: center;cursor: pointer;border:none;font-size:16px;margin-left;outline: none}
+/*银行卡*/
+.yinhangka{padding:25px 30px}
+.yinhangka_tishi{line-height: 14px;padding-left:45px;position: relative;}
+.yinhangka_tishi:before{content: "提示：";display: inline-block;width: 45px;position: absolute;left:0;top:0;}
+.no_bang,.yi_bang{display: none}
+.bank_card{background-size: 100% 100%;background: url("../img/bank_card.jpg") no-repeat;width:330px;height:192px;padding:10px 30px}
+.bank_card a{text-decoration: underline;}
+

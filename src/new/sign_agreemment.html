@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <script src="js/main.js" type="text/javascript"></script>
+    <title>签约协议</title>
+</head>
+
+<body class="sign_body">
+    <div style="overflow:hidden;">
+        <div class="agreement-detail">
+            <p>
+                <span class="fl">借款金额</span><span class="fr" id="borrowAmount"></span>
+            </p>
+            <p>
+                <span class="fl">借款期限</span><span class="fr" id="repayTerm"></span>
+            </p>
+            <p>
+                <span class="fl">还款方式</span><span class="fr" id="repayType"></span>
+            </p>
+        </div>
+        <div class="scroll-wrapper">
+            <iframe class="agreement-content" onload='scroll_()' src="info_credit.html" id="a"></iframe>
+        </div>
+        <div class="agreement-btn">
+            <button id="agreement">我已同意此协议</button>
+        </div>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- <script src="js/common.js"></script> -->
+    <script src="js/login.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+    <script>
+    function scroll_() {
+        var iframe = document.querySelector("#a");
+        var children = document.getElementById('a').contentWindow;
+        var dom = children.document;
+        var h = dom.body.offsetHeight;
+        var p = iframe.parentNode;
+        iframe.style.height = h + "px";
+        p.onscroll = function() {
+            $("#agreement").removeClass("btn-active");
+            if (p.scrollTop >= ($(iframe).height() - $(p).height()))
+                $("#agreement").addClass("btn-active");
+        }
+    };
+
+    Zepto(function($) {
+        document.body.ontouchstart = function(e) {
+            //e.stopPropagation();
+            e.preventDefault();
+        }
+
+        var borrowAmount = getParameter('borrowAmount');
+        if (borrowAmount != null) {
+            $("#borrowAmount").html(borrowAmount + '元');
+        } else {
+            $("#borrowAmount").html('0元');
+        }
+
+        $("#repayTerm").html(getParameter("repayTerm") + '个月');
+        var repayType = getParameter("repayType");
+        if (repayType == '1') {
+            $("#repayType").html("先息后本");
+        } else {
+            $("#repayType").html("等额本息");
+        }
+
+        $('#agreement').on("click",
+            function(data) {
+                var signStatus = getParameter("signStatus");
+                if (signStatus != null && signStatus == '0') {
+                    location.href = "bank_sign.html?orderId=" + getParameter('orderId') + "&phone=" + getParameter('phone');
+                } else {
+                    location.href = "index.html";
+                }
+            });
+
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+@charset 'utf-8';
+//base
+$baseWidthSize: 75 !default;
+$baseWidthSize1: 64 !default;
+$baseWidthSize2: 72 !default;
+@function q($px) {
+  @return $px / $baseWidthSize * 1rem;
+}
+@function a($px) {
+  @return $px / $baseWidthSize1 * 1rem;
+}
+@function t($px) {
+  @return $px / $baseWidthSize2 * 1rem;
+}
+

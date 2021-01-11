@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/register1.css">
+    <title>注册</title>
+</head>
+
+<body>
+    <div class="section1">
+        <div class="input1">
+            <input type="text" class="reg_phone" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="phoneId" placeholder="请输入手机号码">
+        </div>
+        <div class="reg-valid">
+            <input type="text" class="reg_phoneCode" placeholder="请输入验证码">
+            <img id="captcha_img" alt="点击更换" onclick="changeCode()" src="" title="点击更换" class="m">
+        </div>
+        <div>
+            <input type="password" class="reg_password" id="passwordId" placeholder="请输入6-16位密码">
+        </div>
+        <div class="forget-valid reg-msg">
+            <input type="text" onkeyup="this.value=this.value.replace(/[\W]/g,'')" onpaste="this.value=this.value.replace(/[\W]/g,'')" id="phoneCodeId" placeholder="请输入短信验证码">
+            <a href="javascript:void(0);" onclick="getPhoneCode(this,60)" class="reg-send">发送验证码</a>
+        </div>
+        <div class="reg-btn">
+            <a href="javascript:void(0);">注 册</a>
+        </div>
+        <div class="reg-cb">
+            <p>注册即为同意《服务条款》及《水象分期注册协议》</p>
+            <p>已注册用户直接使用 <a href="#">App登录</a></p>
+            <p class="reg-down">平台优势</p>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+    var wait = 0;
+
+    function genTimestamp() {
+        var time = new Date();
+        return time.getTime();
+    }
+
+    function changeCode() {
+        $("#captcha_img").attr("src", "/beadwalletloanapp/app/borrower/getVerifyCode.do?t=" + genTimestamp());
+    }
+    $(function() {
+        changeCode();
+        $('.section1').height(document.documentElement.offsetHeight);
+
+        $('.cb').click(function() {
+            if ($(this).hasClass('cb-checked')) {
+                $(this).removeClass('cb-checked');
+            } else {
+                $(this).addClass('cb-checked');
+            }
+        });
+
+        $('.reg-btn').on("click", function(data) {
+
+            var phone = $(".reg_phone").val();
+            var password = $(".reg_password").val();
+            var invitation = $(".reg_invitation").val();
+            var phoneCodeId = $("#phoneCodeId").val(); //短信动态验证码
+            //////////////
+            if (phone == null || phone == '') {
+                alert("请输入手机号码");
+                return false;
+            } else {
+                if (!validate(phone, "mobile")) {
+                    alert("手机号码有误，请重填");
+                    return false;
+                }
+            }
+            if (phoneCodeId == null || phoneCodeId == '') {
+                alert("请输入短信验证码");
+                return false;
+            }
+            if (password == null || password == '') {
+                alert("请输入密码");
+                return false;
+            } else if (!validate(password, "password")) {
+                alert("密码必须是6位及以上数字和字母组合");
+                return false;
+            }
+            // 是否阅读协议
+            if (!$('.cb').hasClass('cb-checked')) {
+                alert("请阅读并同意相关协议");
+                return false;
+            }
+            $.post("/beadwalletloanapp/app/borrower/weiXinRegister.do", {
+                "phoneCode": phoneCodeId,
+                "password": password,
+                "phone": phone,
+                "invitation": invitation
+            }, function(data) {
+                if (data.code == "000") {
+                    alert("注册成功");
+                    location.href = "index.html";
+                } else if (data.code == "406") {
+                    alert("当前用户公众号已在其他设备使用");
+                } else if (data.code == "405") {
+                    alert("用户不存在");
+                } else if (data.code == "403") {
+                    alert("用户名或密码错误");
+                } else {
+                    alert(data.msg);
+                    return false;
+                }
+            });
+        });
+    });
+    //发送短信验证码
+    function getPhoneCode(obj, waitTime) {
+        if (wait == 0) {
+            var phone = $("#phoneId").val();
+            var phoneCode = $(".reg_phoneCode").val(); //图片验证码
+            if (phone == null || phone == '') {
+                alert("请输入手机号码");
+                return false;
+            } else {
+                if (!validate(phone, "mobile")) {
+                    alert("手机号码有误，请重填");
+                    return false;
+                }
+            }
+            if (phoneCode == null || phoneCode == '') {
+                alert("请输入验证码");
+                return false;
+            }
+            $.post('/beadwalletloanapp/app/borrower/checkPhone.do', {
+                "phone": phone
+            }, function(object) {
+                if (object.code == '000') {
+                    $.post('/beadwalletloanapp/app/borrower/sendMessageNew.do', {
+                        "phone": phone,
+                        "verifyCode": phoneCode
+                    }, function(data) {
+                        if (data.code == '000') {
+                            wait = waitTime;
+                            time(obj, waitTime);
+                            alert("短信验证码发送成功");
+                        } else {
+                            // 刷新验证码
+                            changeCode();
+                            alert("验证码输入错误");
+                        }
+                    });
+                } else {
+                    // 刷新验证码
+                    changeCode();
+                    alert("手机号已注册过，不能再注册");
+                }
+            });
+        }
+    }
+
+    //倒计时
+    function time(o, waitTime) {
+        if (wait == 0) {
+            o.innerText = "获取短信验证码";
+        } else {
+            o.innerText = "重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                    time(o, wait)
+                },
+                1000)
+        }
+    }
+    </script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>水珠钱包</title>
+    <link rel="stylesheet" href="css/index.css">
+     <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/raphael.js" type="text/javascript"></script>
+    <script src="js/cycle.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="banner">
+        <ul class="imgs">
+            <li>
+                <a href="#"><img src="img/index_banner_1.jpg" alt="" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="img/index_banner_2.jpg" alt="" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="img/index_banner_3.jpg" alt="" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="img/index_banner_4.jpg" alt="" /></a>
+            </li>
+        </ul>
+        <div class="btn-left"></div>
+        <div class="btn-right"></div>
+        <ul class="circles">
+            <li class="liActive"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="banner-box" id="bannerbox">
+            <div class="banner-register">
+                <h3>水珠钱包年化收益</h3>
+                <p class="percent"><em class="percent1">6</em>% ~ <em class="percent2">12.8</em>%</p>
+                <p class="banner-btn">
+                    <a href="register.html">立即注册</a>
+                </p>
+                <p class="reg-link">已有账号？<a href="login.html">立即登录</a></p>
+            </div>
+            <div class="banner-login" style="display: none;">
+                <div class="banner-avatar">
+                </div>
+                <p>您好！<em>abcd</em></p>
+                <p>欢迎来到水珠钱包</p>
+                <p class="banner-btn">
+                    <a href="my_account.html">我的账户</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content">
+            <div class="index-total">
+                <ul>
+                    <li class="total-1">
+                        平台总投资金额（万元）<em>359.65</em>
+                    </li>
+                    <li class="total-2">
+                        累计注册用户（人）<em>15976</em>
+                    </li>
+                    <li class="total-3">
+                        累计为用户赚取（万元）<em>6.11</em>
+                    </li>
+                    <li class="total-4">
+                        安全运营（天）<em>180</em>
+                    </li>
+                </ul>
+            </div>
+            <div class="index-safety">
+                <ul>
+                    <li>
+                        <p>独有八重信审审核</p>
+                        <p>有效管控借贷风险</p>
+                    </li>
+                    <li>
+                        <p>第三方资金托管模式</p>
+                        <p>保障投资者资金安全</p>
+                    </li>
+                    <li>
+                        <p>多层防火墙隔离系统</p>
+                        <p>保交易数据安全无虞</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="index-section index-section-novice clearfix">
+                <div class="section-left fl">
+                    <h1>新手福利</h1>
+                    <div class="section-info">
+                        <p>100起投</p>
+                        <p>收益高</p>
+                    </div>
+                    <div class="section-btn">
+                        <a href="#">更多&gt;&gt;</a>
+                    </div>
+                </div>
+                <div class="section-right fr">
+                    <div class="section-table">
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <button class="item-btn">立即加入</button>
+                        </div>
+                        <div class="section-item section-news-item">
+                            <a href="#">
+                                <img src="img/index_ads_1.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section-table">
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <button class="item-btn">立即加入</button>
+                        </div>
+                        <div class="section-item section-news-item">
+                            <a href="#">
+                                <img src="img/index_ads_1.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="index-section index-section-premium clearfix">
+                <div class="section-left fl">
+                    <h1>优选理财计划</h1>
+                    <div class="section-info">
+                        <p>优质资产</p>
+                        <p>投资灵活</p>
+                        <p>分散风险</p>
+                    </div>
+                    <div class="section-btn">
+                        <a href="#">更多&gt;&gt;</a>
+                    </div>
+                </div>
+                <div class="section-right fr">
+                    <div class="section-table">
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <button class="item-btn">立即加入</button>
+                            
+                            <div class="processingbar"><font>75%</font></div>    
+                           
+                        </div>
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <button class="item-btn">立即加入</button>
+                             <div class="processingbar"><font>80%</font></div>
+                        </div>
+                    </div>
+                    <div class="section-table">
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <button class="item-btn item-btn-disabled">立即加入</button>
+                            <div class="processingbar"><font>100%</font></div>
+                        </div>
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <button class="item-btn">立即加入</button>
+                             <div class="processingbar"><font>80%</font></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="index-section index-section-selected clearfix">
+                <div class="section-left fl">
+                    <h1>精选理财计划</h1>
+                    <div class="section-info">
+                        <p>收益可观</p>
+                        <p>年化率高</p>
+                    </div>
+                    <div class="section-btn">
+                        <a href="#">更多&gt;&gt;</a>
+                    </div>
+                </div>
+                <div class="section-right fr">
+                    <div class="section-table">
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <div class="line-progress">
+                                <p>加入进度：<strong>80%</strong></p>
+                                <div class="line-bottom">
+                                    <div class="line-top"></div>
+                                </div>
+                            </div>
+                            <button class="item-btn">立即加入</button>
+                        </div>
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <div class="line-progress">
+                                <p>加入进度：<strong>60%</strong></p>
+                                <div class="line-bottom">
+                                    <div class="line-top"></div>
+                                </div>
+                            </div>
+                            <button class="item-btn">立即加入</button>
+                        </div>
+                    </div>
+                    <div class="section-table">
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <div class="line-progress">
+                                <p>加入进度：<strong>100%</strong></p>
+                                <div class="line-bottom">
+                                    <div class="line-top"></div>
+                                </div>
+                            </div>
+                            <button class="item-btn item-btn-disabled">立即加入</button>
+                        </div>
+                        <div class="section-item section-finance-item">
+                            <div class="item-title">
+                                <h3>优选理财No.1</h3>
+                                <span>每月加息 +0.9%</span>
+                            </div>
+                            <div class="item-profit">
+                                <p class="profit-info">预计年收益
+                                    <em></em>
+                                    <i>
+                                        预期年化收益的计算依据为项目借款人的承诺及过往同类项目的实际回款，不构成水珠钱包的任何承诺。
+                                    </i>
+                                </p>
+                                <p class="item-percent">9.0~<em>12.0</em>%</p>
+                            </div>
+                            <div class="item-due">
+                                投资期限<em>30</em>天
+                            </div>
+                            <div class="line-progress">
+                                <p>加入进度：<strong>80%</strong></p>
+                                <div class="line-bottom">
+                                    <div class="line-top"></div>
+                                </div>
+                            </div>
+                            <button class="item-btn">立即加入</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="index-news clearfix">
+                <div class="index-news-title fl">
+                    <ul>
+                        <li class="title-dynamics title-active">
+                            <h3>水珠动态</h3>
+                        </li>
+                        <li class="title-notice">
+                            <h3>平台公告</h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="index-news-detail fr">
+                    <div class="news-item news-dynamics" style="display: block;">
+                        <div class="news-pic">
+                            <img src="img/index_news.jpg" alt="新闻图片">
+                        </div>
+                        <div class="news-latest">
+                            <h3>如何做好投资理财,让我来教你</h3>
+                            <p class="news-time">2016-09-10</p>
+                            <p class="news-abstract">
+                                理财的方式方法非常多，但还是有投资人一不小心就掉入了投资误区，并没有真正享受到理财.财的方式方法非常多，但还是有投资人一不小心，就掉入了投资误区，并没有真正享受到理财理财的方式方法非常多，但还是有还是有还是有还....
+                            </p>
+                        </div>
+                        <div class="news-list">
+                            <dl>
+                                <dt class="list-time">2016-09-10</dt>
+                                <dd class="list-abstract">
+                                    如何做好投资理财,让我来教你如何做好投资理财,让我来教你
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="list-time">2016-09-10</dt>
+                                <dd class="list-abstract">
+                                    如何做好投资理财,让我来教你如何做好投资理财,让我来教你
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="list-time">2016-09-10</dt>
+                                <dd class="list-abstract">
+                                    如何做好投资理财,让我来教你如何做好投资理财,让我来教你
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="news-more">
+                            <a href="#">更多 &gt;</a>
+                        </div>
+                    </div>
+                    <div class="news-item news-notice" style="display: none;">
+                        <div class="news-pic">
+                            <img src="img/index_news.jpg" alt="新闻图片">
+                        </div>
+                        <div class="news-latest">
+                            <h3>如何做好投资理财,让我来教你</h3>
+                            <p class="news-time">2016-10-10</p>
+                            <p class="news-abstract">
+                                理财的方式方法非常多，但还是有投资人一不小心就掉入了投资误区，并没有真正享受到理财.财的方式方法非常多，但还是有投资人一不小心，就掉入了投资误区，并没有真正享受到理财理财的方式方法非常多，但还是有还是有还是有还....
+                            </p>
+                        </div>
+                        <div class="news-list">
+                            <dl>
+                                <dt class="list-time">2016-10-10</dt>
+                                <dd class="list-abstract">
+                                    如何做好投资理财,让我来教你如何做好投资理财,让我来教你
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="list-time">2016-09-10</dt>
+                                <dd class="list-abstract">
+                                    如何做好投资理财,让我来教你如何做好投资理财,让我来教你
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="list-time">2016-09-10</dt>
+                                <dd class="list-abstract">
+                                    如何做好投资理财,让我来教你如何做好投资理财,让我来教你
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="news-more">
+                            <a href="#">更多 &gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="index-coop">
+                <div class="coop-title clearfix">
+                    <h3>合作机构</h3>
+                </div>
+                <div class="coops">
+                    <a href="https://www.fuiou.com/" target="_blank"><img src="img/index_coop_fy.png" alt="富友"></a>
+                    <a href="http://www.shanghai-cis.com.cn/index2.aspx" target="_blank"><img src="img/index_coop_cis.png" alt="cis"></a>
+                    <a href="https://b.zmxy.com.cn/index.htm" target="_blank"><img src="img/index_coop_zm.png" alt="芝麻信用"></a>
+                    <a href="http://www.cfca.com.cn/" target="_blank"><img src="img/index_coop_cfca.png" alt="CFCA合作机构"></a>
+                    <a href="http://www.rong360.com/" target="_blank"><img src="img/index_coop_360.png" alt="融360"></a>
+                    <a href="http://www.zhichengcredit.com/template/home/index.html" target="_blank"><img src="img/index_coop_zc.png" alt="宜信至诚信用"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gap"></div>
+    <div class="footer"></div>
+   
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.header').load('header.html');
+        $('.footer').load('footer.html', function(){
+            linksToggle();
+        });
+        
+        carousel();
+        lineProgress();
+        window.onresize = resizeBanner;
+        resizeBanner();
+        news();
+    });
+    </script>
+</body>
+
+</html>

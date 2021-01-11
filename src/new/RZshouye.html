@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/zepto.min.js" type="text/javascript"></script>
+    <script src="js/swiper-3.3.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script src="js/flex.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+	<script src="js/common.js" type="text/javascript"></script>
+	<title>认证首页</title>
+</head>
+
+<body>
+    <div class="my_swiper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="iteam">
+                        <p>个人信息</p>
+                        <img src="img/geren.png" />
+                        <p class="btn">
+                            <button type="button" class="btn off" id="personInfo">立即填写</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="iteam">
+                        <p>工作信息</p>
+                        <img src="img/gongzuo.png" />
+                        <p class="btn">
+                            <button type="button" class="btn off" id="workInfo">立即填写</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="iteam">
+                        <p>运营商认证</p>
+                        <img src="img/yunyinshang.png" />
+                        <p class="btn">
+                            <button type="button" class="btn off" id="carrieroperatorInfo">立即填写</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="iteam">
+                        <p>拍照上传</p>
+                        <img src="img/paizhao.png" />
+                        <p class="btn">
+                            <button type="button" class="btn off" id="imgUpload">立即填写</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination my_pagination"></div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+			<li id="a1" onclick="javascript:location.href='index.html'">主页</li>
+            <li class="active">认证</li>
+			<li onclick="javascript:location.href='help.html'">帮助</li>
+			<li onclick="javascript:location.href='account_info.html'">个人</li>
+		</ul>
+    </div>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+	var OrderId ="";
+	var bwid = getUUID();
+	var loginToken = getLoginToken();
+	//发送ajax
+	$.ajax({
+			url : "/beadwalletloanapp/app/my/appCheckLogin/generateBwOrderForAuth.do",
+			type : 'post',
+			dataType : 'json',
+			async : false,
+			data : {'loginToken':loginToken,'bwId':bwid,'channel':4},
+			success : function(obj) {
+				OrderId = obj.result;
+			}
+	});
+	
+	<!--获取个人信息的状态 -->
+	$.ajax({
+		type : "post",
+		url : "/beadwalletloanapp/app/my/appCheckLogin/findBwBorrowerByBwId.do",
+		dataType : "json",
+		async: false,
+		data :{'loginToken':loginToken,'bwId':bwid},
+		success : function(obj) {	
+			var status = obj.result;
+			if(status!=null){
+				switch (parseInt(status.authStep)){
+					case 1:
+					  upClass("personInfo");
+					  break;
+					case 2:
+					  upClass("personInfo");
+					  upClass("workInfo");
+					  break;
+					case 3:
+					  upClass("personInfo");
+					  upClass("workInfo");
+					  upClass("carrieroperatorInfo");
+					  break;
+					case 4:
+					  upClass("personInfo");
+					  upClass("workInfo");
+					  upClass("carrieroperatorInfo");
+					  upClass("imgUpload");
+					  break;
+					case 5:
+					  upClass("personInfo");
+					  upClass("workInfo");
+					  upClass("carrieroperatorInfo");
+					  upClass("imgUpload");
+					  break;
+				}
+			}
+		}
+	});
+
+    var window_w = document.documentElement.offsetWidth;
+    var w = Number(window_w) * (0.7);
+    var myswiper = new Swiper('.my_swiper .swiper-container', {
+        width: w,
+        watchActiveIndex: true,
+        centeredSlides: true,
+        slidesOffsetBefore: (window_w - w) / 2,
+        initialSlide: 0,
+        pagination: '.swiper-pagination',
+        onInit: function(swiper) {
+            setTimeout(function() {
+                $('.my_swiper .swiper-pagination-bullet').each(function(i, n) {
+                    $(n).html(i + 1);
+                });
+            }, 100);
+        },
+        onTap: function(swiper) { //事件绑定写这里
+            var index_ = myswiper.activeIndex;
+            var btn = $(".my_swiper p.btn").eq(index_).find("button");
+            if (!btn.hasClass("off")) {
+                switch (btn.attr("id")) {
+                    case "personInfo":
+						window.location.href = "gerenxinxi.html?orderId="+OrderId;
+					    break;
+				    case "workInfo":
+						window.location.href = "gongzuoxinxi.html?orderId="+OrderId;
+                        break;
+                    case "carrieroperatorInfo":
+                        window.location.href = "yunyingshang.html?orderId="+OrderId;
+                        break;
+                    case "imgUpload":
+                        window.location.href = "renzheng.html?orderId="+OrderId;
+                        break;
+				}
+            }
+
+        }
+    });
+
+
+});
+
+	function  upClass(id){
+		  $("#"+id).removeClass('btn off');
+		  $("#"+id).addClass('btn on');
+	}
+	
+</script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+</html>

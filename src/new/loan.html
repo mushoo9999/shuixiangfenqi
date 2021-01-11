@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="./js/flex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="css/loading.css">
+    <script src="js/main.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/common.js"></script>
+    <title>我的借款</title>
+</head>
+
+<body class="loan-body">
+    
+<script>
+
+	$(function(){
+		fixbg();
+		var html=new Array();
+		var bwId=getParameter("bwId");
+		var loginToken=getLoginToken();
+		html.push('<div class="head_top"><i onclick="history.go(-1)"></i>我的借款</div>');
+		$.post('/beadwalletloanapp/app/my/appCheckLogin/findBwBorrowerRecordByBwId.do',{"bwId":bwId,"loginToken":loginToken}, function(data){
+			if(data.code=='000'){
+				if(data.result){
+					var rows=data.result.rows;
+					$(".loan-body").html("");
+					if(rows && rows.length>0){
+						for(var i=0;i<rows.length;i++){
+							var statusId=rows[i].statusId;
+							var id="skipPage_"+i;
+							html.push('<div class="loan-item" id="'+id+'" statusId="'+rows[i].statusId+'" orderId="'+rows[i].id+'">');
+							html.push('<div class="loan-left fl">');
+							html.push('<div class="loan-number">');
+							html.push('<span>');
+							if(statusId==2||statusId==3||statusId==7||statusId==8){
+								html.push(toAmount(0));	
+							}else if(statusId==4||statusId==5||statusId==6||statusId==9||statusId==11||statusId==12||statusId==13||statusId==14){
+								html.push(toAmount(rows[i].borrowAmount));
+							}
+							html.push('</span>元');
+							html.push('</div>');
+							html.push('<div class="loan-time">');
+							html.push('借款时间：<span>');
+							if(rows[i].createTime!=''&&rows[i].createTime!=null){
+								html.push(longToDate(rows[i].createTime,'yyyy-MM-dd hh:mm:ss'));
+							}else{
+								html.push('暂无</span>');
+							}
+							html.push('</span>');
+							html.push('</div></div>');
+							html.push('<div class="loan-right fr">');
+							html.push('<div class="loan-state">');
+							html.push(getStatusName(rows[i].statusId));
+							html.push('</div></div></div>');
+						}
+					}
+					$(".loan-body").html(html.join(""));
+					for(var i=0;i<rows.length;i++){
+						$("#skipPage_"+i).on("click",function(){
+							var statusId=$(this).attr("statusId");
+							var orderId=$(this).attr("orderId");
+							if(statusId==2||statusId==3){
+								//待审核
+								window.location.href="loan_review.html?orderId="+orderId;
+							}else if(statusId==4||statusId==7){
+								//签约、拒绝
+								window.location.href="index.html?orderId="+orderId;
+							}else if(statusId==5||statusId==11||statusId==12||statusId==14){
+								//待放款、待生成合同、待债匹、债匹中
+								window.location.href="loan_lend.html?orderId="+orderId;
+							}else if(statusId==6){
+								//结束
+								window.location.href="repay_settle.html?orderId="+orderId;
+							}else if(statusId==8){
+								//撤回
+								window.location.href="loan_withdraw.html?orderId="+orderId;
+							}else if(statusId==9){
+								//还款中
+								window.location.href="loan_using.html?orderId="+orderId;
+							}else if(statusId==13){
+								//逾期
+								window.location.href="repay_late.html?orderId="+orderId;
+							}
+						});
+					}
+				}else{
+					window.location.href="loan_none.html";
+					return false;
+				}
+			}else{
+				if(data.code=='-1111'){
+					alert(data.msg);
+					window.location.href="login.html";
+				}
+			}
+		});
+	});
+</script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+</body>
+
+</html>
